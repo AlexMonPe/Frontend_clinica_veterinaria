@@ -8,7 +8,10 @@ function App() {
      <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Register />}></Route>
+          <Route path="/"></Route>
+          <Route path="/registro" element={<RegistroUsuario />}></Route>
+          <Route path="/listado" element={<ListadoUsuario />}></Route>
+          
         </Routes>
       </BrowserRouter>
     </div>
