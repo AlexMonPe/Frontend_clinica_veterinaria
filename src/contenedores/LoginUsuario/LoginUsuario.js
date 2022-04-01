@@ -13,7 +13,7 @@ const LoginUsuario = () => {
 
         };
   
-        let loginUser = await fetch("http://localhost:3000/usuarios/login", {
+        let loginUser = await fetch("https://veterinaria-back.herokuapp.com/usuarios/login", {
           method: "POST",
           body: JSON.stringify(formData),
           headers: {
@@ -26,9 +26,12 @@ const LoginUsuario = () => {
         console.log("Se ha enviado el formulario correctamente", loginUser);
   
         if (loginUser) {
-          alert('ha ido bien el login')
+          alert('Te has logeado correctamente. Bienvenido')
+          //console.log(loginUser.token)
+          //console.log(loginUser.id)
           localStorage.setItem("token", loginUser.token)
           localStorage.setItem("id", loginUser.id)
+
           navegar("/listado/");
         }
       } catch (error) {
