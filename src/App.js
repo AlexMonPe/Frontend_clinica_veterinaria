@@ -1,17 +1,15 @@
 import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import RegistroUsuario from "./contenedores/RegisttroUsuario/RegistroUsuario.js";
 import ListadoUsuario from "./contenedores/ListadoUsuario/ListadoUsuario.js";
+import CrearUsuario from "./contenedores/CrearUsuario/CrearUsuario.js";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<RegistroUsuario />}></Route>
-          <Route path="/registro" element={<RegistroUsuario />}></Route>
-          <Route path="/listado" element={<ListadoUsuario />}></Route>
+          <Route path="/registro" element={<CrearUsuario />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
