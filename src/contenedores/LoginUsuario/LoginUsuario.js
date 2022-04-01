@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-
+import "./LoginUsuario.css"
+import { Link } from 'react-router-dom'
 
 const LoginUsuario = () => {
     const navegar = useNavigate();
@@ -41,7 +42,18 @@ const LoginUsuario = () => {
   
     return (
       <div className="loginUsuario">
-        <h1>Login de Usuario</h1>
+        <header>
+                <div className="enlace">
+                <Link to="/registro">Crear Cuenta</Link>    
+   
+                </div>
+                <div className="enlace">
+                   
+                <Link to="/login">Login</Link>
+   
+                </div>
+            </header>
+        <h1>LOGIN DE USUARIO</h1>
         <form onSubmit={(e) => formSubmit(e)}>
           <label for="email">Email</label>
           <input type="email" id="email" name="email" />

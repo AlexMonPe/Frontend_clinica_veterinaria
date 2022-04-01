@@ -1,11 +1,18 @@
 import "./Home.css"
+import { Link } from "react-router-dom"
 
 const Home = () => {
     return (
         <div className="home-contenedor">
             <header>
                 <div className="enlaces">
-                <a href="a">Login</a>    
+                <Link to="/registro">Crear Cuenta</Link>    
+   
+                </div>
+                <div className="enlaces">
+                   
+                <Link to="/login">Login</Link>
+   
                 </div>
             </header>
             <hr />

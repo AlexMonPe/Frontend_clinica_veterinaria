@@ -1,0 +1,39 @@
+.loginUsuario{
+    background: url('../../../imagenes/registro_usuarioBG.jpg') no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.enlace{
+    font-size: 2em;
+    padding: 10px;
+    margin: 10px 20px;
+}
+.enlace:hover{
+    background-color:black;
+    border: 2px solid white;
+}
+.enlace a{
+    text-decoration: none;
+    color: rgb(228, 227, 227);
+}
+label{
+    font-size: 3em;
+    
+}
+input{
+    font-size: 2em;
+}
+form{
+    border: 2px solid #ffffff94;
+    background-color: #050506ad;
+    height: 23em;
+    width: 30em;
+    margin: 0 auto;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
