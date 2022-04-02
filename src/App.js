@@ -1,10 +1,11 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ListadoUsuario from "./contenedores/ListadoUsuario/ListadoUsuario.js";
-import RegistroCita from "./contenedores/RegistroCitas/RegistroCitas.js";
+import RegistroCita from "./contenedores/CrearCita/CrearCita.js";
 import CrearUsuario from "./contenedores/CrearUsuario/CrearUsuario.js";
 import LoginUsuario from "./contenedores/LoginUsuario/LoginUsuario.js";
 import Home from "./componentes/Home/Home.js";
+import ModificarMascota from "./contenedores/ModificarMascota/ModificarMascota.js";
 
 function App() {
   return (

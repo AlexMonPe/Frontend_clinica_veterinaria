@@ -1,8 +1,8 @@
-import "./RegistroCitas.css";
+import "./CrearCita.css";
 
 import { useNavigate } from "react-router-dom";
 
-const RegistroCita = () => {
+const CrearCita = () => {
   //const history = useNavigate();
   const formSubmit = async (e) => {
     // Make the submit dont refresh the page
@@ -64,4 +64,4 @@ const RegistroCita = () => {
   );
 };
 
-export default RegistroCita;
+export default CrearCita;
