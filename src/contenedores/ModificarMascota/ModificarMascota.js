@@ -29,13 +29,6 @@ const ModificarMascota = () => {
           },
         }
       );
-      const obtenerMascota = await fetch(
-        "https://veterinaria-back.herokuapp.com/mascotas/" + formData.idMascota,
-        {
-          method: "GET",
-        }
-      );
-      const infoMascota = await obtenerMascota.json();
 
       if (patchMascota) {
         //history("/listado/" + postUser.userId);
@@ -67,5 +60,3 @@ const ModificarMascota = () => {
 };
 
 export default ModificarMascota;
-
-//placeholder="aaaa-mm-dd hh:mm:ss"

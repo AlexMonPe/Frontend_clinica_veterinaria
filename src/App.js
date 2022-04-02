@@ -6,6 +6,7 @@ import CrearUsuario from "./contenedores/CrearUsuario/CrearUsuario.js";
 import LoginUsuario from "./contenedores/LoginUsuario/LoginUsuario.js";
 import Home from "./componentes/Home/Home.js";
 import ModificarMascota from "./contenedores/ModificarMascota/ModificarMascota.js";
+import BorrarMascota from "./contenedores/BorrarMascota/BorrarMascota.js";
 
 function App() {
   return (
