@@ -7,7 +7,7 @@ import BorrarMascota from "../BorrarMascota/BorrarMascota.js";
 
 const VistaCliente = () => {
   const mascotasCliente = InfoMascotas;
-  return (
+    return (
     <div>
       <div>{InfoUsuario}</div>
       {mascotasCliente.map((mascota) => {
