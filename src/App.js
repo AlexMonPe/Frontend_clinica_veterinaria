@@ -4,6 +4,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import RegistroUsuario from "./contenedores/RegisttroUsuario/RegistroUsuario.js";
 import ListadoUsuario from "./contenedores/ListadoUsuario/ListadoUsuario.js";
 import RegistroMascota from "./contenedores/RegistroMascota/RegistroMascota.js";
+import ListadoMascota from "./contenedores/ListadoMascota/ListadoMascota";
+
 
 function App() {
   return (
@@ -11,8 +13,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<RegistroUsuario />}></Route>
-          <Route path="/registro" element={<RegistroMascota />}></Route>
+          <Route path="/registroMascota" element={<RegistroMascota />}></Route>
           <Route path="/listado" element={<ListadoUsuario />}></Route>
+          <Route path="/listadoMascota" element={<ListadoMascota />}></Route>
   
         </Routes>
       </BrowserRouter>

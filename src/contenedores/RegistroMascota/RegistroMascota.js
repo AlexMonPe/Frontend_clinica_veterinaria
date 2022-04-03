@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
+
 const RegistroMascota = () => {
   const history = useNavigate();
   const formSubmit = async (e) => {
@@ -24,14 +25,13 @@ const RegistroMascota = () => {
 
       console.log("Form Sumbmit works", postUser);
 
-      /*if (postUser) {
-        history("/listado/" + postUser.userId);
-      }*/
+      if (postUser) {
+        history("/listadoMascota/" + postUser.userId);
+      }
     } catch (error) {
       alert("no se ha cargado la bd " + error);
     }
   };
-
   return (
     <div>
       <h1>Registro de Mascotas Cute</h1>
