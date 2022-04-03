@@ -32,6 +32,7 @@ const InfoMascotas = () => {
       {mascotas.map((mascota) => {
         return (
           <div className="infoMascotas">
+            <h3>Datos de {mascota.nombre_mascota}</h3>
             <tr>
               <th>Nombre de la mascota</th>
               <td>{mascota.nombre_mascota}</td>

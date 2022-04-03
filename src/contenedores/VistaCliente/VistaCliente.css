@@ -1,0 +1,5 @@
+.areaCliente{
+    background-image: url("../../../imagenes/estrellas_naranja.jpg");
+    background-size: cover;
+    min-height: 100vh;
+}
