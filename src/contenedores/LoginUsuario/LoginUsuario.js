@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "./LoginUsuario.css"
 import { Link } from 'react-router-dom'
+import Footer from "../../componentes/Footer/Footer";
 
 const LoginUsuario = () => {
     const navegar = useNavigate();
@@ -44,13 +45,10 @@ const LoginUsuario = () => {
       <div className="loginUsuario">
         <header>
                 <div className="enlace">
-                <Link to="/registro">Crear Cuenta</Link>    
-   
+                <Link to="/registro">Registrarse</Link> 
                 </div>
                 <div className="enlace">
-                   
-                <Link to="/login">Login</Link>
-   
+                <Link to="/">Home</Link>
                 </div>
             </header>
         <h1>LOGIN DE USUARIO</h1>
@@ -61,6 +59,7 @@ const LoginUsuario = () => {
           <input type="password" id="contraseña" name="contraseña" />
           <input type="submit" value="Entrar" className="sendButton" />
         </form>
+        <Footer />
       </div>
     );
   };
