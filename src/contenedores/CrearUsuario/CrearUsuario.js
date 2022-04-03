@@ -28,7 +28,7 @@ const CrearUsuario = () => {
 
       if (postUser) {
         alert('ha ido bien el post user')
-        navegar("/listado/" + postUser.userId);
+        navegar("/areaCliente" + postUser.userId);
       }
     } catch (error) {
       alert("no se ha cargado la bd " + error);

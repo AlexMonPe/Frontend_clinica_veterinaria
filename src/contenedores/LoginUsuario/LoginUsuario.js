@@ -34,7 +34,9 @@ const LoginUsuario = () => {
           localStorage.setItem("token", loginUser.token)
           localStorage.setItem("id", loginUser.id)
 
-          navegar("/listado/");
+          navegar("/areaCliente");
+        }else{
+          alert('Usuario y/o contraseña incorrecto.')
         }
       } catch (error) {
         console.log(error);
