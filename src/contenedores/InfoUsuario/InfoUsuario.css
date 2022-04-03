@@ -1,0 +1,10 @@
+.usuariosCard{
+    width: 20em;
+    background-color: black;
+    opacity: 0.8;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+    box-shadow: 0px 0px 10px 7px white;
+}

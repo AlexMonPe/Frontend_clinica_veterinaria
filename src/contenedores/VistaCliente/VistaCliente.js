@@ -15,7 +15,9 @@ const VistaCliente = () => {
       </header>
       <h2>Area de Cliente</h2>
       <h3>Información personal</h3>
-      <div></div>
+      <div>
+        <InfoUsuario />
+      </div>
       <h3>Tus Mascotas</h3>
       <InfoMascotas />
       <Footer />
