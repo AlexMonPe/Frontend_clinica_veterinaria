@@ -3,11 +3,15 @@ import { useEffect, useState } from "react";
 import CrearCita from "../CrearCita/CrearCita";
 import ModificarMascota from "../ModificarMascota/ModificarMascota";
 import BorrarMascota from "../BorrarMascota/BorrarMascota";
+import { useNavigate } from "react-router-dom";
 
 const InfoMascotas = () => {
+  
+  const navegar = useNavigate();
   const [mascotas, setMascotas] = useState([]);
 
   const getMascotas = async () => {
+    
     const mascotasRes = await fetch(
       "https://veterinaria-back.herokuapp.com/mascotas?idUsuario=" +
         localStorage.getItem("id"),
@@ -47,21 +51,21 @@ const InfoMascotas = () => {
               <button
                 type="button"
                 className="botonOpcionesMascotas"
-                onClick={CrearCita}
+                onClick=""
               >
                 Pedir cita
               </button>
               <button
                 type="button"
                 className="botonOpcionesMascotas"
-                onClick={ModificarMascota}
+                onClick=""
               >
                 Modificar datos de mascota
               </button>
               <button
                 type="button"
                 className="botonOpcionesMascotas"
-                onClick={BorrarMascota}
+                onClick=""
               >
                 Eliminar mascota
               </button>

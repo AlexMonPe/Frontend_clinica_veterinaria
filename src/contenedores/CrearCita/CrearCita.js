@@ -49,9 +49,9 @@ const CrearCita = () => {
       <form onSubmit={(e) => formSubmit(e)}>
         <label for="descripcion">Descripción de la visita</label>
         <input type="text" id="descripcion" name="descripcion" />
-        <label for="fechaDeVisita">Fecha en la que desa la visita</label>
+        <label for="fechaDeVisita">Fecha en la que desea la visita</label>
         <input
-          type="text"
+          type="datetime-local"
           id="fechaDeVisita"
           name="fechaDeVisita"
           placeholder="aaaa-mm-dd hh:mm:ss"
