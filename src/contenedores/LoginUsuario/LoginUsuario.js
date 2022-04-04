@@ -50,14 +50,6 @@ const LoginUsuario = () => {
 
   return (
     <div className="loginUsuario">
-      <header>
-        <div className="enlace">
-          <Link to="/registro">Registrarse</Link>
-        </div>
-        <div className="enlace">
-          <Link to="/">Home</Link>
-        </div>
-      </header>
       <h1>LOGIN DE USUARIO</h1>
       <form onSubmit={(e) => formSubmit(e)}>
         <label for="email">Email</label>

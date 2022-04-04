@@ -71,11 +71,6 @@ const CrearCita = () => {
   console.log(mascotas, "mascotaaaaaaaaaaaaaaaaas");
   return (
     <div className="crearCita">
-      <header>
-        <div className="enlace">
-          <Link to="/">Home</Link>
-        </div>
-      </header>
       <h2>Cita para mascota</h2>
       <form onSubmit={(e) => formSubmit(e)}>
         <label for="descripcion">Descripción de la visita</label>

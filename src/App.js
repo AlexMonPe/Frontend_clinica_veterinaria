@@ -5,15 +5,17 @@ import ListadoUsuario from "./contenedores/EjemploListado/ejemploListado.js";
 import CrearUsuario from "./contenedores/CrearUsuario/CrearUsuario.js";
 import LoginUsuario from "./contenedores/LoginUsuario/LoginUsuario.js";
 import Home from "./componentes/Home/Home.js";
-import RegistroMascota from "./contenedores/RegistroMascota/RegistroMascota.js"
+import RegistroMascota from "./contenedores/RegistroMascota/RegistroMascota.js";
 import VistaCliente from "./componentes/VistaCliente/VistaCliente";
 import InfoMascotas from "./contenedores/InfoMascotas/InfoMascotas";
 import CrearCita from "./contenedores/CrearCita/CrearCita.js";
+import Header from "./componentes/Header/Header";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/login" element={<LoginUsuario />}></Route>

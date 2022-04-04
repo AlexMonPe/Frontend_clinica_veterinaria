@@ -9,7 +9,6 @@ import Header from "../Header/Header";
 const VistaCliente = () => {
   return (
     <div className="areaCliente">
-      <Header />
       <h2>Area de Cliente</h2>
       <h3>Información personal</h3>
       <div>

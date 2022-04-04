@@ -37,12 +37,6 @@ const CrearUsuario = () => {
 
   return (
     <div className="crearUsuario">
-      <header>
-        <div className="enlaces">
-        <Link to="/">Home</Link> 
-        </div>
-        
-      </header>
       <h2>Registro de Usuario</h2>
       <form onSubmit={(e) => formSubmit(e)} className="form_crear_usuario">
         <label for="nombre">Nombre</label>
