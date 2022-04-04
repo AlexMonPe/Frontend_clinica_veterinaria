@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-
+import "./RegistroMascota.css"
 
 const RegistroMascota = () => {
   const history = useNavigate();

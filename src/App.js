@@ -5,6 +5,7 @@ import RegistroCita from "./contenedores/RegistroCitas/RegistroCitas.js";
 import CrearUsuario from "./contenedores/CrearUsuario/CrearUsuario.js";
 import LoginUsuario from "./contenedores/LoginUsuario/LoginUsuario.js";
 import Home from "./componentes/Home/Home.js";
+import RegistroMascota from "./contenedores/RegistroMascota/RegistroMascota.js"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/registroCita" element={<RegistroCita />}></Route>
           <Route path="/registro" element={<CrearUsuario />}></Route>
           <Route path="/login" element={<LoginUsuario />}></Route>
+          <Route path="/registroMascota" element={<RegistroMascota />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
