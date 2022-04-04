@@ -88,7 +88,7 @@ const CrearCita = () => {
           placeholder="aaaa-mm-dd hh:mm:ss"
         />
         <select>
-          {mascotas.forEach((mascota) => <option value={mascota.nombre_mascota}>{mascota.nombre_mascota}</option>)}
+          {mascotas.map((mascota) => <option value={mascota.id}>{mascota.nombre_mascota}</option>)}
         </select>
         <label for="idMascota">Introduzca el número de su mascota</label>
         <input type="text" id="idMascota" name="idMascota" />
