@@ -1,7 +1,7 @@
 import "./VistaCliente.css";
-import InfoUsuario from "../InfoUsuario/InfoUsuario.js";
-import InfoMascotas from "../InfoMascotas/InfoMascotas.js";
-import Footer from "../../componentes/Footer/Footer";
+import InfoUsuario from "../../contenedores/InfoUsuario/InfoUsuario.js";
+import InfoMascotas from "../../contenedores/InfoMascotas/InfoMascotas.js";
+import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
 
 //Mostrar la información de las mascotas de cada cliente y la información del usuario, y poder modificar cualquier item.
