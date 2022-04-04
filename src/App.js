@@ -11,12 +11,14 @@ import InfoMascotas from "./contenedores/InfoMascotas/InfoMascotas";
 import CrearCita from "./contenedores/CrearCita/CrearCita.js";
 import Header from "./componentes/Header/Header";
 import Footer from "./componentes/Footer/Footer";
+import InfoCitas from "./contenedores/InfoCitas/InfoCitas";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Header />
+        <InfoCitas />
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/login" element={<LoginUsuario />}></Route>
