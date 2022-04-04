@@ -9,17 +9,16 @@ const Header = () => {
   useEffect(() => {
     store.subscribe(() => {
       setlogged(store.getState().logged);
-      console.log(store.getState().logged, "estado logged storeeeeeeeeee");
     });
   }, []);
 
   return (
     <header>
-      <div>
         {logged && (
-          <div>
+          <div className="cabecera">
             <div className="enlaces">
-              <Link to="/logout">Logout</Link>
+              <Link to="/home">Logout</Link>
+              {}
             </div>
             <div className="enlaces">
               <Link to="/">Home</Link>
@@ -36,7 +35,6 @@ const Header = () => {
             </div>
           </div>
         )}
-      </div>
     </header>
   );
 };

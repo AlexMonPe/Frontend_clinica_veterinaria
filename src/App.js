@@ -10,6 +10,7 @@ import VistaCliente from "./componentes/VistaCliente/VistaCliente";
 import InfoMascotas from "./contenedores/InfoMascotas/InfoMascotas";
 import CrearCita from "./contenedores/CrearCita/CrearCita.js";
 import Header from "./componentes/Header/Header";
+import Footer from "./componentes/Footer/Footer";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/mascotas" element={<InfoMascotas />}></Route>
           <Route path="/crearCita" element={<CrearCita />}></Route>
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
