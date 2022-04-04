@@ -1,9 +1,34 @@
-import "./RegistroCitas.css";
+import "./CrearCita.css";
 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-const RegistroCita = () => {
+const CrearCita = () => {
   //const history = useNavigate();
+  const [mascotas, setMascotas] = useState([]);
+
+  //-------------------------- prueba select mascotas por id en localstorage
+  const getMascotas = async () => {
+    const mascotasRes = await fetch(
+      "https://veterinaria-back.herokuapp.com/mascotas?idUsuario=" +
+        localStorage.getItem("id"),
+      {
+        method: "GET",
+      }
+    );
+    const mascotasData = await mascotasRes.json();
+    setMascotas(mascotasData);
+  };
+  useEffect(() => {
+    try {
+      getMascotas();
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
+  //--------------------------------
+
   const formSubmit = async (e) => {
     // Make the submit dont refresh the page
     e.preventDefault();
@@ -24,6 +49,7 @@ const RegistroCita = () => {
           },
         }
       );
+
       const obtenerMascota = await fetch(
         "https://veterinaria-back.herokuapp.com/mascotas/" + formData.idMascota,
         {
@@ -42,20 +68,28 @@ const RegistroCita = () => {
       alert("no se ha cargado la bd " + error);
     }
   };
-
+  console.log(mascotas, "mascotaaaaaaaaaaaaaaaaas");
   return (
-    <div>
-      <h1>Cita para mascota</h1>
+    <div className="crearCita">
+      <header>
+        <div className="enlace">
+          <Link to="/">Home</Link>
+        </div>
+      </header>
+      <h2>Cita para mascota</h2>
       <form onSubmit={(e) => formSubmit(e)}>
         <label for="descripcion">Descripción de la visita</label>
         <input type="text" id="descripcion" name="descripcion" />
-        <label for="fechaDeVisita">Fecha en la que desa la visita</label>
+        <label for="fechaDeVisita">Fecha en la que desea la visita</label>
         <input
-          type="text"
+          type="datetime-local"
           id="fechaDeVisita"
           name="fechaDeVisita"
           placeholder="aaaa-mm-dd hh:mm:ss"
         />
+        <select>
+          {mascotas.forEach((mascota) => <option value={mascota.nombre_mascota}>{mascota.nombre_mascota}</option>)}
+        </select>
         <label for="idMascota">Introduzca el número de su mascota</label>
         <input type="text" id="idMascota" name="idMascota" />
         <input type="submit" value="SEND" className="sendButton" />
@@ -64,4 +98,4 @@ const RegistroCita = () => {
   );
 };
 
-export default RegistroCita;
+export default CrearCita;

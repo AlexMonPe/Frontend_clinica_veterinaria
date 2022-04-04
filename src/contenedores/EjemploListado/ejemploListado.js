@@ -16,7 +16,7 @@ const Listado = () => {
   //y lo llamamos fuera de esta función. [SUSANA]
   const getUser = () => {
     setTimeout(async () => {
-      const usersResults = await fetch("http://localhost:3000/users", {
+      const usersResults = await fetch("https://veterinaria-back.herokuapp.com/usuarios", {
         method: "GET",
       });
 
