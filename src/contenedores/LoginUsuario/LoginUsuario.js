@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./LoginUsuario.css";
 import { Link } from "react-router-dom";
-import Footer from "../../componentes/Footer/Footer";
 import store from "../../store/store.js";
 
 const LoginUsuario = () => {
@@ -50,15 +49,14 @@ const LoginUsuario = () => {
 
   return (
     <div className="loginUsuario">
-      <h1>LOGIN DE USUARIO</h1>
-      <form onSubmit={(e) => formSubmit(e)}>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" />
-        <label for="contraseña">Contraseña</label>
-        <input type="password" id="contraseña" name="contraseña" />
-        <input type="submit" value="Entrar" className="sendButton" />
+      <h2>LOGIN DE USUARIO</h2>
+      <form onSubmit={(e) => formSubmit(e)} className="formUsuario">
+        <label className="labelUsuario" for="email">Email</label>
+        <input className="inputUsuario" type="email" id="email" name="email" />
+        <label className="labelUsuario" for="contraseña">Contraseña</label>
+        <input className="inputUsuario" type="password" id="contraseña" name="contraseña" />
+        <input type="submit" value="Entrar" className="botonUsuario" />
       </form>
-      <Footer />
     </div>
   );
 };

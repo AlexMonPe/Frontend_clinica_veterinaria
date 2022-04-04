@@ -30,7 +30,7 @@ const InfoUsuario = () => {
           <p>Apellidos: {usuario.apellidos}</p>
           <p>Email: {usuario.email}</p>
           <p>Telefono: {usuario.telefono}</p>
-          <button type="button" className="botonOpcionesMascotas">Modificar datos</button>
+          <button type="button" className="botonOpcionesUsuario">Modificar datos</button>
         </div> )
         
       })}
