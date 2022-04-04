@@ -15,7 +15,7 @@ const RegistroMascota = () => {
         idUsuario: e.target[4].value,
       };
 
-      const postUser = await fetch("https://veterinaria-back.herokuapp.com/mascotas", {
+      const crearMascota = await fetch("https://veterinaria-back.herokuapp.com/mascotas", {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {
@@ -23,10 +23,10 @@ const RegistroMascota = () => {
         },
       });
 
-      console.log("Form Sumbmit works", postUser);
+      console.log("Form Sumbmit works", crearMascota);
 
-      if (postUser) {
-        history("/listadoMascota/" + postUser.userId);
+      if (crearMascota) {
+        history("/listadoMascota/" + crearMascota.userId);
       }
     } catch (error) {
       alert("no se ha cargado la bd " + error);
