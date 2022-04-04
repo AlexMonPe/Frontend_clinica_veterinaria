@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "./RegistroMascota.css"
+import "./RegistroMascota.css";
 
 const RegistroMascota = () => {
   const history = useNavigate();
@@ -15,13 +15,16 @@ const RegistroMascota = () => {
         idUsuario: e.target[4].value,
       };
 
-      const crearMascota = await fetch("https://veterinaria-back.herokuapp.com/mascotas", {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const crearMascota = await fetch(
+        "https://veterinaria-back.herokuapp.com/mascotas",
+        {
+          method: "POST",
+          body: JSON.stringify(formData),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       console.log("Form Sumbmit works", crearMascota);
 

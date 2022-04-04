@@ -14,27 +14,27 @@ const Header = () => {
 
   return (
     <header>
-        {logged && (
-          <div className="cabecera">
-            <div className="enlaces">
-              <Link to="/home">Logout</Link>
-              {}
-            </div>
-            <div className="enlaces">
-              <Link to="/">Home</Link>
-            </div>
+      {logged && (
+        <div className="cabecera">
+          <div className="enlaces">
+            <Link to="/home">Logout</Link>
+            {}
           </div>
-        )}
-        {!logged && (
-          <div>
-            <div className="enlaces">
-              <Link to="/registro">Registrarse</Link>
-            </div>
-            <div className="enlaces">
-              <Link to="/login">Login</Link>
-            </div>
+          <div className="enlaces">
+            <Link to="/">Home</Link>
           </div>
-        )}
+        </div>
+      )}
+      {!logged && (
+        <div>
+          <div className="enlaces">
+            <Link to="/registro">Registrarse</Link>
+          </div>
+          <div className="enlaces">
+            <Link to="/login">Login</Link>
+          </div>
+        </div>
+      )}
     </header>
   );
 };

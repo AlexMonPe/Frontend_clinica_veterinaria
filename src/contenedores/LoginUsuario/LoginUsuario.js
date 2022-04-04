@@ -35,8 +35,8 @@ const LoginUsuario = () => {
         //console.log(loginUser.id)
         localStorage.setItem("token", loginUser.token);
         localStorage.setItem("id", loginUser.id);
-        
-        store.dispatch({type: "USER_LOGGED"})
+
+        store.dispatch({ type: "USER_LOGGED" });
 
         navegar("/areaCliente");
       } else {
@@ -51,10 +51,19 @@ const LoginUsuario = () => {
     <div className="loginUsuario">
       <h2>LOGIN DE USUARIO</h2>
       <form onSubmit={(e) => formSubmit(e)} className="formUsuario">
-        <label className="labelUsuario" for="email">Email</label>
+        <label className="labelUsuario" for="email">
+          Email
+        </label>
         <input className="inputUsuario" type="email" id="email" name="email" />
-        <label className="labelUsuario" for="contraseña">Contraseña</label>
-        <input className="inputUsuario" type="password" id="contraseña" name="contraseña" />
+        <label className="labelUsuario" for="contraseña">
+          Contraseña
+        </label>
+        <input
+          className="inputUsuario"
+          type="password"
+          id="contraseña"
+          name="contraseña"
+        />
         <input type="submit" value="Entrar" className="botonUsuario" />
       </form>
     </div>

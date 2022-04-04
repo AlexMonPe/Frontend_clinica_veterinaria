@@ -1,12 +1,11 @@
-.crearCita{
-    background-image: url("../../../imagenes/estrellas_nevado.jpg");
-    background-size: cover;
-    min-height: 100vh;
-    
+.crearCita {
+  background-image: url("../../../imagenes/estrellas_nevado.jpg");
+  background-size: cover;
+  min-height: 100vh;
 }
 
-.crearCita form{
-    height: 37em;
-    width: 44em;
-    font-size: 13px;
+.crearCita form {
+  height: 37em;
+  width: 44em;
+  font-size: 13px;
 }

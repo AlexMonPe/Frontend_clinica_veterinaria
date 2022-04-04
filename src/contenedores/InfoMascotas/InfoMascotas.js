@@ -6,12 +6,10 @@ import BorrarMascota from "../BorrarMascota/BorrarMascota";
 import { useNavigate } from "react-router-dom";
 
 const InfoMascotas = () => {
-  
   const navegar = useNavigate();
   const [mascotas, setMascotas] = useState([]);
 
   const getMascotas = async () => {
-    
     const mascotasRes = await fetch(
       "https://veterinaria-back.herokuapp.com/mascotas?idUsuario=" +
         localStorage.getItem("id"),

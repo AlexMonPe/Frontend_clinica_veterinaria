@@ -25,14 +25,17 @@ const InfoUsuario = () => {
   return (
     <div>
       {usuarios.map((usuario) => {
-        return (<div className="usuariosCard">
-          <p>Nombre: {usuario.nombre}</p>
-          <p>Apellidos: {usuario.apellidos}</p>
-          <p>Email: {usuario.email}</p>
-          <p>Telefono: {usuario.telefono}</p>
-          <button type="button" className="botonOpcionesUsuario">Modificar datos</button>
-        </div> )
-        
+        return (
+          <div className="usuariosCard">
+            <p>Nombre: {usuario.nombre}</p>
+            <p>Apellidos: {usuario.apellidos}</p>
+            <p>Email: {usuario.email}</p>
+            <p>Telefono: {usuario.telefono}</p>
+            <button type="button" className="botonOpcionesUsuario">
+              Modificar datos
+            </button>
+          </div>
+        );
       })}
     </div>
   );

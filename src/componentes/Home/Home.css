@@ -1,16 +1,15 @@
-.home-contenedor{
-    background-image: url('../../../imagenes/fondo-home.jpg');
-    background-size: cover;
-    min-height: 100vh;
+.home-contenedor {
+  background-image: url("../../../imagenes/fondo-home.jpg");
+  background-size: cover;
+  min-height: 100vh;
 }
 
 h1 {
-    font-size: 5.5em;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    margin: 0;
+  font-size: 5.5em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  margin: 0;
 }
 
-img{
-    
-    box-shadow: 0px 0px 30px white;
+img {
+  box-shadow: 0px 0px 30px white;
 }
