@@ -5,7 +5,7 @@ import ListadoUsuario from "./contenedores/EjemploListado/ejemploListado.js";
 import CrearUsuario from "./contenedores/CrearUsuario/CrearUsuario.js";
 import LoginUsuario from "./contenedores/LoginUsuario/LoginUsuario.js";
 import Home from "./componentes/Home/Home.js";
-import VistaCliente from "./contenedores/VistaCliente/VistaCliente";
+import VistaCliente from "./componentes/VistaCliente/VistaCliente";
 import InfoMascotas from "./contenedores/InfoMascotas/InfoMascotas";
 import CrearCita from "./contenedores/CrearCita/CrearCita.js";
 

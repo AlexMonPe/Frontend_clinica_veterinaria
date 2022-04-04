@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import "./LoginUsuario.css";
 import { Link } from "react-router-dom";
 import Footer from "../../componentes/Footer/Footer";
+import store from "../../store/store.js";
 
 const LoginUsuario = () => {
   const navegar = useNavigate();
@@ -35,6 +36,8 @@ const LoginUsuario = () => {
         //console.log(loginUser.id)
         localStorage.setItem("token", loginUser.token);
         localStorage.setItem("id", loginUser.id);
+        
+        store.dispatch({type: "USER_LOGGED"})
 
         navegar("/areaCliente");
       } else {
