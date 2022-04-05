@@ -2,7 +2,6 @@ import "./InfoMascotas.css";
 import { useEffect, useState } from "react";
 import CrearCita from "../CrearCita/CrearCita";
 import ModificarMascota from "../ModificarMascota/ModificarMascota.js";
-import BorrarMascota from "../BorrarMascota/BorrarMascota";
 import { useNavigate } from "react-router-dom";
 
 const InfoMascotas = () => {

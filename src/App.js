@@ -14,7 +14,6 @@ import Footer from "./componentes/Footer/Footer";
 import InfoCitas from "./contenedores/InfoCitas/InfoCitas";
 import PopUp from "./contenedores/PopUp/PopUp";
 import ModificarMascota from "./contenedores/ModificarMascota/ModificarMascota.js";
-import BorrarMascota from "./contenedores/BorrarMascota/BorrarMascota.js";
 
 function App() {
   return (
