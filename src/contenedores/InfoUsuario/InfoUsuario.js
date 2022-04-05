@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const InfoUsuario = () => {
   const [usuarios, setUsuarios] = useState([]);
-
+  const navegar = useNavigate();
   const getUsuario = async () => {
     const usuarioRes = await fetch(
       "https://veterinaria-back.herokuapp.com/usuarios?id=" +
@@ -35,6 +35,9 @@ const InfoUsuario = () => {
             <p>Telefono: {usuario.telefono}</p>
             <button type="button" className="botonOpcionesUsuario">
               Modificar datos
+            </button>
+            <button type="button" className="botonOpcionesUsuario" onClick={() => navegar("/crearCita")}>
+              Pedir cita
             </button>
           </div>
         );

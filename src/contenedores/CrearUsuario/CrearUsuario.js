@@ -1,7 +1,9 @@
+import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import "./CrearUsuario.css";
 
 const CrearUsuario = () => {
+  const dispatch = useDispatch()
   const navegar = useNavigate();
   const formSubmit = async (e) => {
     // Make the submit dont refresh the page
@@ -30,6 +32,8 @@ const CrearUsuario = () => {
 
       if (postUser) {
         alert("ha ido bien el post user");
+        dispatch({ type: "VER_POPUP", payload: "Usuario creado. Bienvenido" });
+        setTimeout(()=>dispatch({type: "CERRAR_POPUP"}), 3000)
         navegar("/areaCliente" + postUser.userId);
       }
     } catch (error) {

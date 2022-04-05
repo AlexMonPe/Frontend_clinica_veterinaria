@@ -1,8 +1,10 @@
 import "./ModificarMascota.css";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 const ModificarMascota = () => {
+  const dispatch = useDispatch();
   const params = useParams();
   const navegar = useNavigate();
   //const history = useNavigate();
@@ -49,7 +51,11 @@ const ModificarMascota = () => {
       );
       if (patchMascota) {
         navegar("/areaCliente");
-        return alert("Has modificado la mascota " + mascota.nombre_mascota);
+        dispatch({
+          type: "VER_POPUP",
+          payload: "Has modificado a " + mascota.nombre_mascota,
+        });
+        setTimeout(() => dispatch({ type: "CERRAR_POPUP" }), 3000);
       }
     } catch (error) {
       alert("no se ha cargado la bd " + error);
