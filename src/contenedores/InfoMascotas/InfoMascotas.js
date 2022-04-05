@@ -29,6 +29,26 @@ const InfoMascotas = () => {
     }
   }, []);
   console.log(mascotas, "estas son las mascotas");
+  const borrarMascota = async (idmascota) => {
+    try {
+      const deleteMascota = await fetch(
+        "https://veterinaria-back.herokuapp.com/mascotas/" + idmascota,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      getMascotas();
+      if (deleteMascota) {
+        return alert("Has borrado tu mascota de la base de datos");
+      }
+    } catch (error) {
+      alert("no se ha cargado la bd " + error);
+    }
+  };
+
   return (
     <div className="mascotasCard">
       {mascotas.map((mascota) => {
@@ -66,7 +86,7 @@ const InfoMascotas = () => {
               <button
                 type="button"
                 className="botonOpcionesMascotas"
-                onClick=""
+                onClick={() => borrarMascota(mascota.id)}
               >
                 Eliminar mascota
               </button>
