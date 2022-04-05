@@ -12,13 +12,13 @@ import CrearCita from "./contenedores/CrearCita/CrearCita.js";
 import Header from "./componentes/Header/Header";
 import Footer from "./componentes/Footer/Footer";
 import InfoCitas from "./contenedores/InfoCitas/InfoCitas";
+import PopUp from "./contenedores/PopUp/PopUp";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Header />
-        <InfoCitas />
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/login" element={<LoginUsuario />}></Route>
@@ -29,6 +29,7 @@ function App() {
           <Route path="/mascotas" element={<InfoMascotas />}></Route>
           <Route path="/crearCita" element={<CrearCita />}></Route>
         </Routes>
+        <PopUp />
         <Footer />
       </BrowserRouter>
     </div>
