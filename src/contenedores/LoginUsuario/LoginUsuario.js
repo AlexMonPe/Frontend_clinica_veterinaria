@@ -2,9 +2,11 @@ import { useNavigate } from "react-router-dom";
 import "./LoginUsuario.css";
 import { Link } from "react-router-dom";
 import store from "../../store/store.js";
+import { useDispatch } from "react-redux";
 
 const LoginUsuario = () => {
   const navegar = useNavigate();
+  const dispatch = useDispatch()
   const formSubmit = async (e) => {
     // Make the submit dont refresh the page
     e.preventDefault();
@@ -38,14 +40,16 @@ const LoginUsuario = () => {
 
         store.dispatch({ type: "USER_LOGGED" });
 
-        navegar("/areaCliente");
+        dispatch({ type: "VER_POPUP", payload: "Te has logeado correctamente. Bienvenido" });
+        setTimeout(()=>dispatch({type: "CERRAR_POPUP"}), 3000)
+        navegar("/areaCliente")
       } else {
         alert("Usuario y/o contraseña incorrecto.");
       }
     } catch (error) {
       console.log(error);
     }
-  };
+  }
 
   return (
     <div className="loginUsuario">
@@ -67,7 +71,7 @@ const LoginUsuario = () => {
         <input type="submit" value="Entrar" className="botonUsuario" />
       </form>
     </div>
-  );
+  )
 };
 
 export default LoginUsuario;

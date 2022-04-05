@@ -49,7 +49,7 @@ const InfoMascotas = () => {
               <button
                 type="button"
                 className="botonOpcionesMascotas"
-                onClick=""
+                onClick={()=>navegar("/crearCita")}
               >
                 Pedir cita
               </button>
