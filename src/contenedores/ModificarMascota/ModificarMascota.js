@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 const ModificarMascota = () => {
   const params = useParams();
+  const navegar = useNavigate();
   //const history = useNavigate();
   const [mascota, setMascota] = useState({});
   const getMascotas = async () => {
@@ -47,14 +48,13 @@ const ModificarMascota = () => {
         }
       );
       if (patchMascota) {
-        //history("/listado/" + postUser.userId);
+        navegar("/areaCliente");
         return alert("Has modificado la mascota " + mascota.nombre_mascota);
       }
     } catch (error) {
       alert("no se ha cargado la bd " + error);
     }
   };
-
   return (
     <div>
       <h1>Modifica los datos de tu mascota que deseas actualizar</h1>

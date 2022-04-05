@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const CrearCita = () => {
-  const history = useNavigate();
+  const navegar = useNavigate();
   const [mascotas, setMascotas] = useState([]);
 
   //-------------------------- prueba select mascotas por id en localstorage
@@ -61,7 +61,7 @@ const CrearCita = () => {
       console.log("Form Sumbmit works", postCita);
 
       if (postCita) {
-        history("/areaCliente");
+        navegar("/areaCliente");
         return alert("Has creado una cita para " + infoMascota.nombre_mascota);
       }
     } catch (error) {
@@ -72,16 +72,28 @@ const CrearCita = () => {
     <div className="crearCita">
       <h2>Cita para mascota</h2>
       <form onSubmit={(e) => formSubmit(e)} className="formCrearCita">
-        <label className="labelCrearCita" for="descripcion">Descripción de la visita</label>
-        <input className="inputCrearCita" type="text" id="descripcion" name="descripcion" />
-        <label className="labelCrearCita" for="fechaDeVisita">Fecha en la que desea la visita</label>
-        <input className="fecha"
+        <label className="labelCrearCita" for="descripcion">
+          Descripción de la visita
+        </label>
+        <input
+          className="inputCrearCita"
+          type="text"
+          id="descripcion"
+          name="descripcion"
+        />
+        <label className="labelCrearCita" for="fechaDeVisita">
+          Fecha en la que desea la visita
+        </label>
+        <input
+          className="fecha"
           type="datetime-local"
           id="fechaDeVisita"
           name="fechaDeVisita"
           placeholder="aaaa-mm-dd hh:mm:ss"
         />
-        <label className="labelCrearCita" for="seleccionar">Selecciona la Mascota</label>
+        <label className="labelCrearCita" for="seleccionar">
+          Selecciona la Mascota
+        </label>
         <select className="selectMascotas">
           {mascotas.map((mascota) => (
             <option value={mascota.id}>{mascota.nombre_mascota}</option>
