@@ -13,6 +13,7 @@ import Header from "./componentes/Header/Header";
 import Footer from "./componentes/Footer/Footer";
 import InfoCitas from "./contenedores/InfoCitas/InfoCitas";
 import PopUp from "./contenedores/PopUp/PopUp";
+import ModificarMascota from "./contenedores/ModificarMascota/ModificarMascota.js";
 
 function App() {
   return (
@@ -28,6 +29,10 @@ function App() {
           <Route path="/areaCliente" element={<VistaCliente />}></Route>
           <Route path="/mascotas" element={<InfoMascotas />}></Route>
           <Route path="/crearCita" element={<CrearCita />}></Route>
+          <Route
+            path="/modificarMascota/:id"
+            element={<ModificarMascota />}
+          ></Route>
         </Routes>
         <PopUp />
         <Footer />

@@ -1,7 +1,7 @@
 import "./InfoMascotas.css";
 import { useEffect, useState } from "react";
 import CrearCita from "../CrearCita/CrearCita";
-import ModificarMascota from "../ModificarMascota/ModificarMascota";
+import ModificarMascota from "../ModificarMascota/ModificarMascota.js";
 import BorrarMascota from "../BorrarMascota/BorrarMascota";
 import { useNavigate } from "react-router-dom";
 
@@ -36,6 +36,8 @@ const InfoMascotas = () => {
           <div className="infoMascotas">
             <h3>Datos de {mascota.nombre_mascota}</h3>
             <tr>
+              <th>Número de la mascota</th>
+              <td>{mascota.id}</td>
               <th>Nombre de la mascota</th>
               <td>{mascota.nombre_mascota}</td>
               <th>Peso</th>
@@ -49,17 +51,18 @@ const InfoMascotas = () => {
               <button
                 type="button"
                 className="botonOpcionesMascotas"
-                onClick={()=>navegar("/crearCita")}
+                onClick={() => navegar("/crearCita")}
               >
                 Pedir cita
               </button>
               <button
                 type="button"
                 className="botonOpcionesMascotas"
-                onClick=""
+                onClick={() => navegar("/modificarMascota/" + mascota.id)}
               >
                 Modificar datos de mascota
               </button>
+
               <button
                 type="button"
                 className="botonOpcionesMascotas"
