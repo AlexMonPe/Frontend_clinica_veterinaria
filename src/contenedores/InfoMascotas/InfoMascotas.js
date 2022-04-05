@@ -36,8 +36,6 @@ const InfoMascotas = () => {
           <div className="infoMascotas">
             <h3>Datos de {mascota.nombre_mascota}</h3>
             <tr>
-              <th>Número de la mascota</th>
-              <td>{mascota.id}</td>
               <th>Nombre de la mascota</th>
               <td>{mascota.nombre_mascota}</td>
               <th>Peso</th>
@@ -70,6 +68,9 @@ const InfoMascotas = () => {
               >
                 Eliminar mascota
               </button>
+              <button type="button" className="botonOpcionesUsuario" onClick={() => navegar("/verCitas/" + mascota.id)}>
+              Ver citas
+            </button>
             </div>
           </div>
         );
