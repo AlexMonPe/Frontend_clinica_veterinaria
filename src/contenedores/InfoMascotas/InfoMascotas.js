@@ -3,8 +3,10 @@ import { useEffect, useState } from "react";
 import CrearCita from "../CrearCita/CrearCita";
 import ModificarMascota from "../ModificarMascota/ModificarMascota.js";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 const InfoMascotas = () => {
+  const dispatch = useDispatch()
   const navegar = useNavigate();
   const [mascotas, setMascotas] = useState([]);
 
@@ -41,6 +43,10 @@ const InfoMascotas = () => {
       );
       getMascotas();
       if (deleteMascota) {
+        dispatch({
+          type: "VER_POPUP",
+          payload: "Has borrado la mascota correctamente ",
+        });
         return alert("Has borrado tu mascota de la base de datos");
       }
     } catch (error) {
@@ -65,13 +71,7 @@ const InfoMascotas = () => {
               <td>{mascota.doctor}</td>
             </tr>
             <div className="botonesOpciones">
-              <button
-                type="button"
-                className="botonOpcionesMascotas"
-                onClick={() => navegar("/crearCita")}
-              >
-                Pedir cita
-              </button>
+              
               <button
                 type="button"
                 className="botonOpcionesMascotas"
