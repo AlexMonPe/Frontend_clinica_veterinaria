@@ -1,8 +1,10 @@
 import "./ModificarMascota.css";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 const ModificarMascota = () => {
+  const dispatch = useDispatch()
   const params = useParams();
   //const history = useNavigate();
   const [mascota, setMascota] = useState({});
@@ -47,8 +49,9 @@ const ModificarMascota = () => {
         }
       );
       if (patchMascota) {
+        dispatch({ type: "VER_POPUP", payload: "Has modificado a "+ mascota.nombre_mascota });
+        setTimeout(()=>dispatch({type: "CERRAR_POPUP"}), 3000)
         //history("/listado/" + postUser.userId);
-        return alert("Has modificado la mascota " + mascota.nombre_mascota);
       }
     } catch (error) {
       alert("no se ha cargado la bd " + error);
