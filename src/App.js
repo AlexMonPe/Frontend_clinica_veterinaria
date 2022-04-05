@@ -9,6 +9,7 @@ import RegistroMascota from "./contenedores/RegistroMascota/RegistroMascota.js"
 import VistaCliente from "./componentes/VistaCliente/VistaCliente";
 import InfoMascotas from "./contenedores/InfoMascotas/InfoMascotas";
 import CrearCita from "./contenedores/CrearCita/CrearCita.js";
+import BorrarCita from "./contenedores/Borrarcita/Borrarcita.js";
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
           <Route path="/areaCliente" element={<VistaCliente />}></Route>
           <Route path="/mascotas" element={<InfoMascotas />}></Route>
           <Route path="/crearCita" element={<CrearCita />}></Route>
+          <Route path="/borrarCita" element={<BorrarCita />}></Route>
+          
         </Routes>
       </BrowserRouter>
     </div>

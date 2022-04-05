@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
+import Footer from "../../componentes/Footer/Footer";
 import "./RegistroMascota.css"
 
 const RegistroMascota = () => {
@@ -52,6 +53,7 @@ const RegistroMascota = () => {
         <label for="idUsuario">idUsuario</label>
         <input type="text" id="idUsuario" name="idUsuario" />
         <input type="submit" value="Registrar" className="sendButton" />
+        <Footer />
       </form>
     </div>
   );
