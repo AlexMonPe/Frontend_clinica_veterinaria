@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./RegistroMascota.css"
 
 const RegistroMascota = () => {
@@ -33,20 +33,25 @@ const RegistroMascota = () => {
     }
   };
   return (
-    <div>
+    <div className="crearMascota">
+      <header>
+        <div className="enlaceMascota">
+          <Link to="/">Home</Link>
+        </div>
+      </header>
       <h1>Registro de Mascotas Cute</h1>
-      <form onSubmit={(e) => formSubmit(e)}>
+      <form className="formulario" onSubmit={(e) => formSubmit(e)}>
         <label for="nombre_mascota">nombre_mascota</label>
         <input type="text" id="nombre_mascota" name="nombre_mascota" />
         <label for="peso">peso</label>
         <input type="text" id="peso" name="peso" />
         <label for="fecha_nacimiento">fecha_nacimiento</label>
-        <input type="text" id="fecha_nacimiento" name="fecha_nacimiento" />
+        <input type="datetime-local" id="fecha_nacimiento" name="fecha_nacimiento" placeholder="aaaa-mm-dd hh:mm:ss"/>
         <label for="doctor">doctor</label>
         <input type="text" id="doctor" name="doctor" />
         <label for="idUsuario">idUsuario</label>
         <input type="text" id="idUsuario" name="idUsuario" />
-        <input type="submit" value="SEND" className="sendButton" />
+        <input type="submit" value="Registrar" className="sendButton" />
       </form>
     </div>
   );
