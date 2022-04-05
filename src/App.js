@@ -29,6 +29,7 @@ function App() {
           <Route path="/areaCliente" element={<VistaCliente />}></Route>
           <Route path="/mascotas" element={<InfoMascotas />}></Route>
           <Route path="/crearCita" element={<CrearCita />}></Route>
+          <Route path="/verCitas/:id" element={<InfoCitas />}></Route>
           <Route
             path="/modificarMascota/:id"
             element={<ModificarMascota />}

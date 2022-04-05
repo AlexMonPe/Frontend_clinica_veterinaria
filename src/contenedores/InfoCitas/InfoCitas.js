@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import "./InfoCitas.css";
 
 const InfoCitas = () => {
   const [citas, setCitas] = useState([]);
+  const params = useParams();
 
   const getCitas = async () => {
+    console.log(params.id, "id mascotaaaaaaa rumbaa");
     const citasRes = await fetch(
-      "https://veterinaria-back.herokuapp.com/citas/lista?idUsuario=" +
-        localStorage.getItem("id"),
+      "https://veterinaria-back.herokuapp.com/citas/lista?idMascota=" +
+        params.id,
       {
         method: "GET",
       }
     );
     const citasData = await citasRes.json();
-      console.log(citasData, 'citasparseadaaaaaaaa')
     setCitas(citasData);
   };
   useEffect(() => {
@@ -24,6 +26,22 @@ const InfoCitas = () => {
     }
   }, []);
   console.log(citas, "estas son las citas");
+  const cancelarCita = async (id) => {
+    try {
+      console.log(id, ' id mascotaaaa')
+      await fetch("https://veterinaria-back.herokuapp.com/citas/" + id, {
+        method: "PATCH",
+        body: JSON.stringify({estado: "cancelada" }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      console.log()
+      getCitas();
+    } catch (error) {
+      alert("no se ha cargado la bd " + error);
+    }
+  };
   return (
     <div className="citasCard">
       {citas.map((cita) => {
@@ -37,8 +55,6 @@ const InfoCitas = () => {
               <td>{cita.fechaDeVisita}</td>
               <th>Estado</th>
               <td>{cita.estado}</td>
-              <th>idMascota</th>
-              <td>{cita.idMascota}</td>
             </tr>
             <div className="botonesOpciones">
               <button
@@ -51,7 +67,7 @@ const InfoCitas = () => {
               <button
                 type="button"
                 className="botonOpcionesMascotas"
-                onClick=""
+                onClick={() => cancelarCita(cita.id)}
               >
                 Cancelar Cita
               </button>
