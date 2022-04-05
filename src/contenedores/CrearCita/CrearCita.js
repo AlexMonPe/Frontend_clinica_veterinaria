@@ -6,10 +6,6 @@ import { useDispatch } from "react-redux";
 
 const CrearCita = () => {
   const navegar = useNavigate();
-<<<<<<< HEAD
-=======
-  const dispatch = useDispatch()
->>>>>>> 626d6d1adbe6c1c52226c5380a3bf7377b8df299
   const [mascotas, setMascotas] = useState([]);
 
   //-------------------------- prueba select mascotas por id en localstorage
@@ -66,11 +62,6 @@ const CrearCita = () => {
       console.log("Form Sumbmit works", postCita);
 
       if (postCita) {
-<<<<<<< HEAD
-=======
-        dispatch({ type: "VER_POPUP", payload: "Has pedido cita correctamente" });
-        setTimeout(()=>dispatch({type: "CERRAR_POPUP"}), 3000)
->>>>>>> 626d6d1adbe6c1c52226c5380a3bf7377b8df299
         navegar("/areaCliente");
         return alert("Has creado una cita para " + infoMascota.nombre_mascota);
       }
