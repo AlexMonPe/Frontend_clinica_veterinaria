@@ -53,7 +53,7 @@ const ModificarCita = () => {
         navegar("/areaCliente");
         dispatch({
           type: "VER_POPUP",
-          payload: "Has modificado a " + cita.nombre_cita,
+          payload: "Has modificado a " + cita.descripcion,
         });
         setTimeout(() => dispatch({ type: "CERRAR_POPUP" }), 3000);
       }
@@ -62,17 +62,17 @@ const ModificarCita = () => {
     }
   };
   return (
-    <div>
+    <div className="modificarCita" >
       <h1>Modifica los datos de tu cita que deseas actualizar</h1>
-      <form onSubmit={(e) => formSubmit(e)}>
-        <label for="descripcion">Introduzca </label>
+      <form className="formulario" onSubmit={(e) => formSubmit(e)}>
+        <label className="labelModificarCita" for="descripcion">Introduzca </label>
         <input
           type="text"
           id="descripcion"
           name="descripcion"
           defaultValue={cita.descripcion}
         />
-        <label for="fechaDeVisita">Introduzca </label>
+        <label className="labelModificarCita" for="fechaDeVisita">Introduzca </label>
         <input 
          className="fecha"
          type="datetime-local"
@@ -81,7 +81,7 @@ const ModificarCita = () => {
          placeholder="aaaa-mm-dd hh:mm:ss"
          defaultValue={cita.fechaDeVisita}
          />
-        <label for="estado">Introduzca </label>
+        <label  className="labelModificarCita" for="estado">Introduzca </label>
         <input
           type="text"
           id="estado"
