@@ -17,7 +17,7 @@ const Header = () => {
       {logged && (
         <div className="cabecera">
           <div className="enlaces">
-            <Link to="/home">Logout</Link>
+            <Link to="/">Logout</Link>
             {}
           </div>
           <div className="enlaces">

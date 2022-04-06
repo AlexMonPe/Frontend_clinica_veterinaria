@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import actionCreator from "../../store/actionTypes";
 import "./CrearUsuario.css";
 
 const CrearUsuario = () => {
@@ -27,14 +28,15 @@ const CrearUsuario = () => {
           },
         }
       );
+        const usuarioCreado = await postUser.json()
+      console.log("Se ha enviado el formulario correctamente", usuarioCreado);
 
-      console.log("Se ha enviado el formulario correctamente", postUser);
-
-      if (postUser) {
+      if (usuarioCreado) {
+        
         alert("ha ido bien el post user");
-        dispatch({ type: "VER_POPUP", payload: "Usuario creado. Bienvenido" });
-        setTimeout(()=>dispatch({type: "CERRAR_POPUP"}), 3000)
-        navegar("/areaCliente" + postUser.userId);
+        dispatch(actionCreator("VER_POPUP", "Usuario creado. Bienvenido"));
+        setTimeout(()=>dispatch(actionCreator("CERRAR_POPUP")), 3000)
+        navegar("/login");
       }
     } catch (error) {
       alert("no se ha cargado la bd " + error);

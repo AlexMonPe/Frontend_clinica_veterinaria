@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import actionCreator from "../../store/actionTypes";
 import "./InfoCitas.css";
 
 const InfoCitas = () => {
+  const dispatch = useDispatch()
   const [citas, setCitas] = useState([]);
   const params = useParams();
 
@@ -38,6 +41,8 @@ const InfoCitas = () => {
       });
       console.log()
       getCitas();
+      dispatch(actionCreator("VER_POPUP", "Has cancelado la cita"));
+      setTimeout(()=>dispatch(actionCreator("CERRAR_POPUP")), 3000)
     } catch (error) {
       alert("no se ha cargado la bd " + error);
     }

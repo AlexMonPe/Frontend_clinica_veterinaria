@@ -3,7 +3,7 @@ import { createStore } from "redux";
 
 const initialState = {
   logged: false,
-  popup: false,
+  popup: { visibilidad: false, texto: "" }
 };
 
 const reductor = (state = initialState, action) => {

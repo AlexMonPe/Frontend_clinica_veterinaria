@@ -3,6 +3,7 @@ import "./LoginUsuario.css";
 import { Link } from "react-router-dom";
 import store from "../../store/store.js";
 import { useDispatch } from "react-redux";
+import actionCreator from "../../store/actionTypes";
 
 const LoginUsuario = () => {
   const navegar = useNavigate();
@@ -32,16 +33,12 @@ const LoginUsuario = () => {
       console.log("Se ha enviado el formulario correctamente", loginUser);
 
       if (loginUser) {
-        alert("Te has logeado correctamente. Bienvenido");
-        //console.log(loginUser.token)
-        //console.log(loginUser.id)
         localStorage.setItem("token", loginUser.token);
         localStorage.setItem("id", loginUser.id);
 
-        store.dispatch({ type: "USER_LOGGED" });
-
-        dispatch({ type: "VER_POPUP", payload: "Te has logeado correctamente. Bienvenido" });
-        setTimeout(()=>dispatch({type: "CERRAR_POPUP"}), 3000)
+        dispatch(actionCreator("USER_LOGGED"));
+        dispatch(actionCreator("VER_POPUP","Te has logeado correctamente. Bienvenido"))
+        setTimeout(()=>dispatch(actionCreator("CERRAR_POPUP")), 3000)
         navegar("/areaCliente")
       } else {
         alert("Usuario y/o contraseña incorrecto.");

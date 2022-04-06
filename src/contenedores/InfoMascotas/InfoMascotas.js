@@ -4,27 +4,17 @@ import CrearCita from "../CrearCita/CrearCita";
 import ModificarMascota from "../ModificarMascota/ModificarMascota.js";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import actionCreator from "../../store/actionTypes";
+import getMascotas from "../../Servicios/getMascotas";
 
 const InfoMascotas = () => {
   const dispatch = useDispatch()
   const navegar = useNavigate();
   const [mascotas, setMascotas] = useState([]);
-
-  const getMascotas = async () => {
-    const mascotasRes = await fetch(
-      "https://veterinaria-back.herokuapp.com/mascotas?idUsuario=" +
-        localStorage.getItem("id"),
-      {
-        method: "GET",
-      }
-    );
-    const mascotasData = await mascotasRes.json();
-
-    setMascotas(mascotasData);
-  };
-  useEffect(() => {
+  useEffect(async () => {
     try {
-      getMascotas();
+      const mascotas = await getMascotas()
+      setMascotas(mascotas);
     } catch (error) {
       console.log(error);
     }
@@ -43,10 +33,8 @@ const InfoMascotas = () => {
       );
       getMascotas();
       if (deleteMascota) {
-        dispatch({
-          type: "VER_POPUP",
-          payload: "Has borrado la mascota correctamente ",
-        });
+        dispatch(actionCreator("VER_POPUP","Has borrado la mascota correctamente"));
+        setTimeout(()=>dispatch(actionCreator("CERRAR_POPUP")), 3000)
         return alert("Has borrado tu mascota de la base de datos");
       }
     } catch (error) {
