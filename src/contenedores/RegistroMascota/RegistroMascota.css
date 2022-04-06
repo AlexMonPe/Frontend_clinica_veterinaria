@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .crearMascota{
     background-image: url("../../../imagenes/estrellas_nevado.jpg");
     background-size: cover;
@@ -27,13 +26,3 @@ label{
     height: 54em;
     width: 40em;
 }
-=======
-label {
-  display: block;
-  margin: 10px;
-}
-.sendButton {
-  display: block;
-  margin: 2em auto;
-}
->>>>>>> 85434594b7cc03c8f119d425deb6b53a437d1d40

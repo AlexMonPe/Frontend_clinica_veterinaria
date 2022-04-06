@@ -61,12 +61,7 @@ const ModificarMascota = () => {
       alert("no se ha cargado la bd " + error);
     }
   };
-<<<<<<< HEAD
-
-  return ( 
-=======
   return (
->>>>>>> 85434594b7cc03c8f119d425deb6b53a437d1d40
     <div>
       <h1>Modifica los datos de tu mascota que deseas actualizar</h1>
       <form onSubmit={(e) => formSubmit(e)}>

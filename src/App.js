@@ -9,15 +9,12 @@ import RegistroMascota from "./contenedores/RegistroMascota/RegistroMascota.js";
 import VistaCliente from "./componentes/VistaCliente/VistaCliente";
 import InfoMascotas from "./contenedores/InfoMascotas/InfoMascotas";
 import CrearCita from "./contenedores/CrearCita/CrearCita.js";
-<<<<<<< HEAD
-import BorrarCita from "./contenedores/Borrarcita/Borrarcita.js";
-=======
 import Header from "./componentes/Header/Header";
 import Footer from "./componentes/Footer/Footer";
 import InfoCitas from "./contenedores/InfoCitas/InfoCitas";
 import PopUp from "./contenedores/PopUp/PopUp";
 import ModificarMascota from "./contenedores/ModificarMascota/ModificarMascota.js";
->>>>>>> 85434594b7cc03c8f119d425deb6b53a437d1d40
+import ModificarCita from "./contenedores/ModificarCita/ModificarCita.js";
 
 function App() {
   return (
@@ -33,16 +30,15 @@ function App() {
           <Route path="/areaCliente" element={<VistaCliente />}></Route>
           <Route path="/mascotas" element={<InfoMascotas />}></Route>
           <Route path="/crearCita" element={<CrearCita />}></Route>
-<<<<<<< HEAD
-          <Route path="/borrarCita" element={<BorrarCita />}></Route>
-          
-=======
           <Route path="/verCitas/:id" element={<InfoCitas />}></Route>
           <Route
             path="/modificarMascota/:id"
             element={<ModificarMascota />}
           ></Route>
->>>>>>> 85434594b7cc03c8f119d425deb6b53a437d1d40
+          <Route
+            path="/modificarCita/:id"
+            element={<ModificarCita />}
+          ></Route>
         </Routes>
         <PopUp />
         <Footer />

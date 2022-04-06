@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-import { Link, useNavigate } from "react-router-dom";
-import Footer from "../../componentes/Footer/Footer";
-import "./RegistroMascota.css"
-=======
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import "./RegistroMascota.css";
->>>>>>> 85434594b7cc03c8f119d425deb6b53a437d1d40
 
 const RegistroMascota = () => {
   const dispatch = useDispatch()

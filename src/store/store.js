@@ -21,10 +21,6 @@ const reductor = (state = initialState, action) => {
     };
   }
 
-<<<<<<< HEAD
-export default createStore(reductor, devToolsEnhancer())
-
-=======
   if (action.type == "CERRAR_POPUP") {
     return {
       ...state,
@@ -36,4 +32,3 @@ export default createStore(reductor, devToolsEnhancer())
 };
 
 export default createStore(reductor, devToolsEnhancer());
->>>>>>> 85434594b7cc03c8f119d425deb6b53a437d1d40
