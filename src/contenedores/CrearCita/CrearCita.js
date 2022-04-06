@@ -62,20 +62,15 @@ const CrearCita = () => {
         }
       );
       const infoMascota = await obtenerMascota.json();
-      
+
       if (postCita) {
-<<<<<<< HEAD
         dispatch(
           actionCreator(
-            "VER_POPUP",
+            VER_POPUP,
             "Has creado la cita para " + infoMascota.nombre_mascota
           )
         );
-        setTimeout(() => dispatch(actionCreator("CERRAR_POPUP")), 3000);
-=======
-        dispatch(actionCreator(VER_POPUP, "Has creado la cita para " + infoMascota.nombre_mascota));
-        setTimeout(()=>dispatch(actionCreator(CERRAR_POPUP)), 3000)
->>>>>>> 2ae740b71ebe73e69c0afc1cef0830ba3e6adcd8
+        setTimeout(() => dispatch(actionCreator(CERRAR_POPUP)), 3000);
         navegar("/areaCliente");
       }
     } catch (error) {

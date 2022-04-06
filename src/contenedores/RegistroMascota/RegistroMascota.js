@@ -31,20 +31,14 @@ const RegistroMascota = () => {
       );
 
       if (crearMascota) {
-<<<<<<< HEAD
         dispatch(
           actionCreator(
-            "VER_POPUP",
+            VER_POPUP,
             "Has creado a  " + crearMascota.nombre_mascota
           )
         );
-        setTimeout(() => dispatch(actionCreator("CERRAR_POPUP")), 3000);
-        navegar("/areaCliente");
-=======
-        dispatch(actionCreator(VER_POPUP, "Has creado a  "+ crearMascota.nombre_mascota));
-        setTimeout(()=>dispatch(actionCreator(CERRAR_POPUP)), 3000)
+        setTimeout(() => dispatch(actionCreator(CERRAR_POPUP)), 3000);
         navegar("/listadoMascota/" + crearMascota.userId);
->>>>>>> 2ae740b71ebe73e69c0afc1cef0830ba3e6adcd8
       }
     } catch (error) {
       alert("no se ha cargado la bd " + error);
@@ -62,11 +56,6 @@ const RegistroMascota = () => {
         <input type="text" id="fecha_nacimiento" name="fecha_nacimiento" />
         <label htmlFor="doctor">doctor</label>
         <input type="text" id="doctor" name="doctor" />
-<<<<<<< HEAD
-=======
-        <label htmlFor="idUsuario">idUsuario</label>
-        <input type="text" id="idUsuario" name="idUsuario" />
->>>>>>> 2ae740b71ebe73e69c0afc1cef0830ba3e6adcd8
         <input type="submit" value="SEND" className="sendButton" />
       </form>
     </div>
