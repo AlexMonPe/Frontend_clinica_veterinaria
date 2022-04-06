@@ -7,11 +7,11 @@ const ModificarCita = () => {
   const dispatch = useDispatch();
   const params = useParams();
   const navegar = useNavigate();
-  //const history = useNavigate();
   const [cita, setCita] = useState({});
   const getCitas = async () => {
     const citasRes = await fetch(
-      "https://veterinaria-back.herokuapp.com/citas/" + params.id,
+      "https://veterinaria-back.herokuapp.com/citas/lista?idMascota=" +
+        params.id,
       {
         method: "GET",
       }
@@ -40,7 +40,7 @@ const ModificarCita = () => {
       };
 
       const patchCita = await fetch(
-        "https://veterinaria-back.herokuapp.com/citas/" + params.id,
+        "https://veterinaria-back.herokuapp.com/citas?id=",
         {
           method: "PATCH",
           body: JSON.stringify(formData),
@@ -65,14 +65,14 @@ const ModificarCita = () => {
     <div className="modificarCita" >
       <h1>Modifica los datos de tu cita que deseas actualizar</h1>
       <form className="formulario" onSubmit={(e) => formSubmit(e)}>
-        <label className="labelModificarCita" for="descripcion">Introduzca </label>
+        <label className="labelModificarCita" for="descripcion">Introduzca la descripcion </label>
         <input
           type="text"
           id="descripcion"
           name="descripcion"
           defaultValue={cita.descripcion}
         />
-        <label className="labelModificarCita" for="fechaDeVisita">Introduzca </label>
+        <label className="labelModificarCita" for="fechaDeVisita">Introduzca la fechaDeVisita </label>
         <input 
          className="fecha"
          type="datetime-local"
@@ -81,7 +81,7 @@ const ModificarCita = () => {
          placeholder="aaaa-mm-dd hh:mm:ss"
          defaultValue={cita.fechaDeVisita}
          />
-        <label  className="labelModificarCita" for="estado">Introduzca </label>
+        <label  className="labelModificarCita" for="estado">Introduzca el estado </label>
         <input
           type="text"
           id="estado"

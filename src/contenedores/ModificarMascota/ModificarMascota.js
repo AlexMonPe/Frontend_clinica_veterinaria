@@ -62,19 +62,19 @@ const ModificarMascota = () => {
     }
   };
   return (
-    <div>
+    <div className="modificarMascota">
       <h1>Modifica los datos de tu mascota que deseas actualizar</h1>
-      <form onSubmit={(e) => formSubmit(e)}>
-        <label for="nombre_mascota">Introduzca el nombre de su mascota</label>
+      <form className="formulario" onSubmit={(e) => formSubmit(e)}>
+        <label className="labelModificarmascota" for="nombre_mascota">Introduzca el nombre de su mascota</label>
         <input
           type="text"
           id="nombre_mascota"
           name="nombre_mascota"
           defaultValue={mascota.nombre_mascota}
         />
-        <label for="peso">Introduzca el peso de su mascota</label>
+        <label className="labelModificarmascota" for="peso">Introduzca el peso de su mascota</label>
         <input type="text" id="peso" name="peso" defaultValue={mascota.peso} />
-        <label for="doctor">Introduzca el doctor que la atiende</label>
+        <label className="labelModificarmascota" for="doctor">Introduzca el doctor que la atiende</label>
         <input
           type="text"
           id="doctor"
