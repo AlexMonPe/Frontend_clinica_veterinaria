@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import actionCreator from "../../store/actionTypes";
+import { CERRAR_POPUP, VER_POPUP } from "../../store/types";
 import "./CrearUsuario.css";
 
 const CrearUsuario = () => {
@@ -28,14 +29,11 @@ const CrearUsuario = () => {
           },
         }
       );
-        const usuarioCreado = await postUser.json()
-      console.log("Se ha enviado el formulario correctamente", usuarioCreado);
+        const usuarioCreado = await postUser.json();
 
       if (usuarioCreado) {
-        
-        alert("ha ido bien el post user");
-        dispatch(actionCreator("VER_POPUP", "Usuario creado. Bienvenido"));
-        setTimeout(()=>dispatch(actionCreator("CERRAR_POPUP")), 3000)
+        dispatch(actionCreator(VER_POPUP, "Usuario creado. Bienvenido"));
+        setTimeout(()=>dispatch(actionCreator(CERRAR_POPUP)), 3000)
         navegar("/login");
       }
     } catch (error) {
@@ -47,7 +45,7 @@ const CrearUsuario = () => {
     <div className="crearUsuario">
       <h2>REGISTRO DE USUARIO</h2>
       <form onSubmit={(e) => formSubmit(e)} className="formCrearUsuario">
-        <label className="labelCrearUsuario" for="nombre">
+        <label className="labelCrearUsuario" htmlFor="nombre">
           Nombre
         </label>
         <input
@@ -56,7 +54,7 @@ const CrearUsuario = () => {
           id="nombre"
           name="nombre"
         />
-        <label className="labelCrearUsuario" for="apellidos">
+        <label className="labelCrearUsuario" htmlFor="apellidos">
           Apellidos
         </label>
         <input
@@ -65,7 +63,7 @@ const CrearUsuario = () => {
           id="apellidos"
           name="apellidos"
         />
-        <label className="labelCrearUsuario" for="email">
+        <label className="labelCrearUsuario" htmlFor="email">
           Email
         </label>
         <input
@@ -75,7 +73,7 @@ const CrearUsuario = () => {
           name="email"
           placeholder="ejemplo@dominio.com"
         />
-        <label className="labelCrearUsuario" for="contraseña">
+        <label className="labelCrearUsuario" htmlFor="contraseña">
           Contraseña
         </label>
         <input
@@ -84,7 +82,7 @@ const CrearUsuario = () => {
           id="contraseña"
           name="contraseña"
         />
-        <label className="labelCrearUsuario" for="tel">
+        <label className="labelCrearUsuario" htmlFor="tel">
           Telefono
         </label>
         <input

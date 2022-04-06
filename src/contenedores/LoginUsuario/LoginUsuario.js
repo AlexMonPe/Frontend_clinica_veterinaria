@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import store from "../../store/store.js";
 import { useDispatch } from "react-redux";
 import actionCreator from "../../store/actionTypes";
+import { CERRAR_POPUP, USER_LOGGED, VER_POPUP } from "../../store/types";
 
 const LoginUsuario = () => {
   const navegar = useNavigate();
@@ -28,17 +29,14 @@ const LoginUsuario = () => {
         }
       );
       loginUser = await loginUser.json();
-      console.log(loginUser);
-
-      console.log("Se ha enviado el formulario correctamente", loginUser);
 
       if (loginUser) {
         localStorage.setItem("token", loginUser.token);
         localStorage.setItem("id", loginUser.id);
 
-        dispatch(actionCreator("USER_LOGGED"));
-        dispatch(actionCreator("VER_POPUP","Te has logeado correctamente. Bienvenido"))
-        setTimeout(()=>dispatch(actionCreator("CERRAR_POPUP")), 3000)
+        dispatch(actionCreator(USER_LOGGED));
+        dispatch(actionCreator(VER_POPUP,"Te has logeado correctamente. Bienvenido"))
+        setTimeout(()=>dispatch(actionCreator(CERRAR_POPUP)), 3000)
         navegar("/areaCliente")
       } else {
         alert("Usuario y/o contraseña incorrecto.");
@@ -52,11 +50,11 @@ const LoginUsuario = () => {
     <div className="loginUsuario">
       <h2>LOGIN DE USUARIO</h2>
       <form onSubmit={(e) => formSubmit(e)} className="formUsuario">
-        <label className="labelUsuario" for="email">
+        <label className="labelUsuario" htmlFor="email">
           Email
         </label>
         <input className="inputUsuario" type="email" id="email" name="email" />
-        <label className="labelUsuario" for="contraseña">
+        <label className="labelUsuario" htmlFor="contraseña">
           Contraseña
         </label>
         <input

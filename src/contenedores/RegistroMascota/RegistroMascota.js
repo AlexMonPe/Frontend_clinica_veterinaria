@@ -1,13 +1,14 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import actionCreator from "../../store/actionTypes";
+import { CERRAR_POPUP, VER_POPUP } from "../../store/types";
 import "./RegistroMascota.css";
 
 const RegistroMascota = () => {
   const dispatch = useDispatch()
   const navegar = useNavigate();
   const formSubmit = async (e) => {
-    // Make the submit dont refresh the page
+    // Al hacer submit no refresca de nuevo la pagina
     e.preventDefault();
     try {
       const formData = {
@@ -30,8 +31,8 @@ const RegistroMascota = () => {
       );
 
       if (crearMascota) {
-        dispatch(actionCreator("VER_POPUP", "Has creado a  "+ crearMascota.nombre_mascota));
-        setTimeout(()=>dispatch(actionCreator("CERRAR_POPUP")), 3000)
+        dispatch(actionCreator(VER_POPUP, "Has creado a  "+ crearMascota.nombre_mascota));
+        setTimeout(()=>dispatch(actionCreator(CERRAR_POPUP)), 3000)
         navegar("/listadoMascota/" + crearMascota.userId);
       }
     } catch (error) {
@@ -42,15 +43,15 @@ const RegistroMascota = () => {
     <div>
       <h1>Registro de Mascotas Cute</h1>
       <form onSubmit={(e) => formSubmit(e)}>
-        <label for="nombre_mascota">nombre_mascota</label>
+        <label htmlFor="nombre_mascota">nombre_mascota</label>
         <input type="text" id="nombre_mascota" name="nombre_mascota" />
-        <label for="peso">peso</label>
+        <label htmlFor="peso">peso</label>
         <input type="text" id="peso" name="peso" />
-        <label for="fecha_nacimiento">fecha_nacimiento</label>
+        <label htmlFor="fecha_nacimiento">fecha_nacimiento</label>
         <input type="text" id="fecha_nacimiento" name="fecha_nacimiento" />
-        <label for="doctor">doctor</label>
+        <label htmlFor="doctor">doctor</label>
         <input type="text" id="doctor" name="doctor" />
-        <label for="idUsuario">idUsuario</label>
+        <label htmlFor="idUsuario">idUsuario</label>
         <input type="text" id="idUsuario" name="idUsuario" />
         <input type="submit" value="SEND" className="sendButton" />
       </form>

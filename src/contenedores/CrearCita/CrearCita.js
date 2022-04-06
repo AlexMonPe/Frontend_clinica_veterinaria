@@ -1,10 +1,11 @@
 import "./CrearCita.css";
 
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import InfoMascotas from "../InfoMascotas/InfoMascotas";
 import actionCreator from "../../store/actionTypes";
+import { CERRAR_POPUP, VER_POPUP } from "../../store/types";
 
 const CrearCita = () => {
   const dispatch = useDispatch()
@@ -61,12 +62,10 @@ const CrearCita = () => {
         }
       );
       const infoMascota = await obtenerMascota.json();
-      //console.log(infoMascota + "Este es el objeto de la mascota");
-      console.log("Form Sumbmit works", postCita);
-
+      
       if (postCita) {
-        dispatch(actionCreator("VER_POPUP", "Has creado la cita para " + infoMascota.nombre_mascota));
-        setTimeout(()=>dispatch(actionCreator("CERRAR_POPUP")), 3000)
+        dispatch(actionCreator(VER_POPUP, "Has creado la cita para " + infoMascota.nombre_mascota));
+        setTimeout(()=>dispatch(actionCreator(CERRAR_POPUP)), 3000)
         navegar("/areaCliente");
       }
     } catch (error) {
@@ -77,7 +76,7 @@ const CrearCita = () => {
     <div className="crearCita">
       <h2>Cita para mascota</h2>
       <form onSubmit={(e) => formSubmit(e)} className="formCrearCita">
-        <label className="labelCrearCita" for="descripcion">
+        <label className="labelCrearCita" htmlFor="descripcion">
           Descripción de la visita
         </label>
         <input
@@ -86,7 +85,7 @@ const CrearCita = () => {
           id="descripcion"
           name="descripcion"
         />
-        <label className="labelCrearCita" for="fechaDeVisita">
+        <label className="labelCrearCita" htmlFor="fechaDeVisita">
           Fecha en la que desea la visita
         </label>
         <input
@@ -96,7 +95,7 @@ const CrearCita = () => {
           name="fechaDeVisita"
           placeholder="aaaa-mm-dd hh:mm:ss"
         />
-        <label className="labelCrearCita" for="seleccionar">
+        <label className="labelCrearCita" htmlFor="seleccionar">
           Selecciona la Mascota
         </label>
         <select className="selectMascotas">
