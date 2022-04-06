@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import actionCreator from "../../store/actionTypes";
 import getMascotas from "../../Servicios/getMascotas";
+import { CERRAR_POPUP, VER_POPUP } from "../../store/types";
 
 const InfoMascotas = () => {
   const dispatch = useDispatch();
@@ -33,10 +34,15 @@ const InfoMascotas = () => {
       );
       getMascotas();
       if (deleteMascota) {
+<<<<<<< HEAD
         dispatch(
           actionCreator("VER_POPUP", "Has borrado la mascota correctamente")
         );
         setTimeout(() => dispatch(actionCreator("CERRAR_POPUP")), 3000);
+=======
+        dispatch(actionCreator(VER_POPUP,"Has borrado la mascota correctamente"));
+        setTimeout(()=>dispatch(actionCreator(CERRAR_POPUP)), 3000)
+>>>>>>> 2ae740b71ebe73e69c0afc1cef0830ba3e6adcd8
         return alert("Has borrado tu mascota de la base de datos");
       }
     } catch (error) {

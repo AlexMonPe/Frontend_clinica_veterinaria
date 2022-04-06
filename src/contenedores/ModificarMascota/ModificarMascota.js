@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import actionCreator from "../../store/actionTypes";
+import { CERRAR_POPUP, VER_POPUP } from "../../store/types";
 
 const ModificarMascota = () => {
   const dispatch = useDispatch();
   const params = useParams();
   const navegar = useNavigate();
-  //const history = useNavigate();
   const [mascota, setMascota] = useState({});
   const getMascotas = async () => {
     const mascotasRes = await fetch(
@@ -20,7 +20,6 @@ const ModificarMascota = () => {
     const mascotaData = await mascotasRes.json();
 
     setMascota(mascotaData);
-    console.log(mascotaData, " dataaaaaaaaa");
   };
   useEffect(() => {
     try {
@@ -31,7 +30,7 @@ const ModificarMascota = () => {
   }, []);
 
   const formSubmit = async (e) => {
-    // Make the submit dont refresh the page
+    // hace que el submit no refresco de nuevo la pagina
     e.preventDefault();
     try {
       const formData = {
@@ -52,8 +51,8 @@ const ModificarMascota = () => {
       );
       if (patchMascota) {
         navegar("/areaCliente");
-        dispatch(actionCreator("VER_POPUP","Has modificado a " + mascota.nombre_mascota)         );
-        setTimeout(()=>dispatch(actionCreator("CERRAR_POPUP")), 3000)
+        dispatch(actionCreator(VER_POPUP,"Has modificado a " + mascota.nombre_mascota)         );
+        setTimeout(()=>dispatch(actionCreator(CERRAR_POPUP)), 3000)
       }
     } catch (error) {
       alert("no se ha cargado la bd " + error);
@@ -63,16 +62,16 @@ const ModificarMascota = () => {
     <div>
       <h1>Modifica los datos de tu mascota que deseas actualizar</h1>
       <form onSubmit={(e) => formSubmit(e)}>
-        <label for="nombre_mascota">Introduzca el nombre de su mascota</label>
+        <label htmlFor="nombre_mascota">Introduzca el nombre de su mascota</label>
         <input
           type="text"
           id="nombre_mascota"
           name="nombre_mascota"
           defaultValue={mascota.nombre_mascota}
         />
-        <label for="peso">Introduzca el peso de su mascota</label>
+        <label htmlFor="peso">Introduzca el peso de su mascota</label>
         <input type="text" id="peso" name="peso" defaultValue={mascota.peso} />
-        <label for="doctor">Introduzca el doctor que la atiende</label>
+        <label htmlFor="doctor">Introduzca el doctor que la atiende</label>
         <input
           type="text"
           id="doctor"
