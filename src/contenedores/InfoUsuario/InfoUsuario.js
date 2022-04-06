@@ -23,7 +23,7 @@ const InfoUsuario = () => {
       console.log(error);
     }
   }, []);
- 
+
   return (
     <div>
       {usuarios.map((usuario) => {
@@ -36,7 +36,18 @@ const InfoUsuario = () => {
             <button type="button" className="botonOpcionesUsuario">
               Modificar datos
             </button>
-            <button type="button" className="botonOpcionesUsuario" onClick={() => navegar("/crearCita")}>
+            <button
+              type="button"
+              className="botonOpcionesUsuario"
+              onClick={() => navegar("/registroMascota")}
+            >
+              Añadir una mascota
+            </button>
+            <button
+              type="button"
+              className="botonOpcionesUsuario"
+              onClick={() => navegar("/crearCita")}
+            >
               Pedir cita
             </button>
           </div>

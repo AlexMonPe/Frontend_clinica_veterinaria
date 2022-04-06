@@ -8,12 +8,12 @@ import actionCreator from "../../store/actionTypes";
 import getMascotas from "../../Servicios/getMascotas";
 
 const InfoMascotas = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const navegar = useNavigate();
   const [mascotas, setMascotas] = useState([]);
   useEffect(async () => {
     try {
-      const mascotas = await getMascotas()
+      const mascotas = await getMascotas();
       setMascotas(mascotas);
     } catch (error) {
       console.log(error);
@@ -33,8 +33,10 @@ const InfoMascotas = () => {
       );
       getMascotas();
       if (deleteMascota) {
-        dispatch(actionCreator("VER_POPUP","Has borrado la mascota correctamente"));
-        setTimeout(()=>dispatch(actionCreator("CERRAR_POPUP")), 3000)
+        dispatch(
+          actionCreator("VER_POPUP", "Has borrado la mascota correctamente")
+        );
+        setTimeout(() => dispatch(actionCreator("CERRAR_POPUP")), 3000);
         return alert("Has borrado tu mascota de la base de datos");
       }
     } catch (error) {
@@ -59,7 +61,6 @@ const InfoMascotas = () => {
               <td>{mascota.doctor}</td>
             </tr>
             <div className="botonesOpciones">
-              
               <button
                 type="button"
                 className="botonOpcionesMascotas"
@@ -75,9 +76,13 @@ const InfoMascotas = () => {
               >
                 Eliminar mascota
               </button>
-              <button type="button" className="botonOpcionesUsuario" onClick={() => navegar("/verCitas/" + mascota.id)}>
-              Ver citas
-            </button>
+              <button
+                type="button"
+                className="botonOpcionesUsuario"
+                onClick={() => navegar("/verCitas/" + mascota.id)}
+              >
+                Ver citas
+              </button>
             </div>
           </div>
         );
