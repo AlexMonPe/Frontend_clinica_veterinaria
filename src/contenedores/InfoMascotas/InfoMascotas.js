@@ -12,13 +12,16 @@ const InfoMascotas = () => {
   const dispatch = useDispatch();
   const navegar = useNavigate();
   const [mascotas, setMascotas] = useState([]);
-  useEffect(async () => {
-    try {
-      const mascotas = await getMascotas();
-      setMascotas(mascotas);
-    } catch (error) {
-      console.log(error);
-    }
+  useEffect(() => {
+    const loadMascotas = async () => {
+      try {
+        const mascotas = await getMascotas();
+        setMascotas(mascotas);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    loadMascotas();
   }, []);
   console.log(mascotas, "estas son las mascotas");
   const borrarMascota = async (idmascota) => {
@@ -34,15 +37,10 @@ const InfoMascotas = () => {
       );
       getMascotas();
       if (deleteMascota) {
-<<<<<<< HEAD
         dispatch(
-          actionCreator("VER_POPUP", "Has borrado la mascota correctamente")
+          actionCreator(VER_POPUP, "Has borrado la mascota correctamente")
         );
-        setTimeout(() => dispatch(actionCreator("CERRAR_POPUP")), 3000);
-=======
-        dispatch(actionCreator(VER_POPUP,"Has borrado la mascota correctamente"));
-        setTimeout(()=>dispatch(actionCreator(CERRAR_POPUP)), 3000)
->>>>>>> 2ae740b71ebe73e69c0afc1cef0830ba3e6adcd8
+        setTimeout(() => dispatch(actionCreator(CERRAR_POPUP)), 3000);
         return alert("Has borrado tu mascota de la base de datos");
       }
     } catch (error) {

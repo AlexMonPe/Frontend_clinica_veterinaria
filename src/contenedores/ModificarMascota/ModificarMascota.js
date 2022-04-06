@@ -51,8 +51,10 @@ const ModificarMascota = () => {
       );
       if (patchMascota) {
         navegar("/areaCliente");
-        dispatch(actionCreator(VER_POPUP,"Has modificado a " + mascota.nombre_mascota)         );
-        setTimeout(()=>dispatch(actionCreator(CERRAR_POPUP)), 3000)
+        dispatch(
+          actionCreator(VER_POPUP, "Has modificado a " + mascota.nombre_mascota)
+        );
+        setTimeout(() => dispatch(actionCreator(CERRAR_POPUP)), 3000);
       }
     } catch (error) {
       alert("no se ha cargado la bd " + error);
@@ -62,7 +64,9 @@ const ModificarMascota = () => {
     <div>
       <h1>Modifica los datos de tu mascota que deseas actualizar</h1>
       <form onSubmit={(e) => formSubmit(e)}>
-        <label htmlFor="nombre_mascota">Introduzca el nombre de su mascota</label>
+        <label htmlFor="nombre_mascota">
+          Introduzca el nombre de su mascota
+        </label>
         <input
           type="text"
           id="nombre_mascota"
