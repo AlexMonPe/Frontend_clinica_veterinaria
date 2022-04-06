@@ -1,17 +1,16 @@
 import "./InfoMascotas.css";
 import { useEffect, useState } from "react";
 import CrearCita from "../CrearCita/CrearCita";
-import ModificarMascota from "../ModificarMascota/ModificarMascota";
-import BorrarMascota from "../BorrarMascota/BorrarMascota";
+import ModificarMascota from "../ModificarMascota/ModificarMascota.js";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 const InfoMascotas = () => {
-  
+  const dispatch = useDispatch()
   const navegar = useNavigate();
   const [mascotas, setMascotas] = useState([]);
 
   const getMascotas = async () => {
-    
     const mascotasRes = await fetch(
       "https://veterinaria-back.herokuapp.com/mascotas?idUsuario=" +
         localStorage.getItem("id"),
@@ -31,6 +30,30 @@ const InfoMascotas = () => {
     }
   }, []);
   console.log(mascotas, "estas son las mascotas");
+  const borrarMascota = async (idmascota) => {
+    try {
+      const deleteMascota = await fetch(
+        "https://veterinaria-back.herokuapp.com/mascotas/" + idmascota,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      getMascotas();
+      if (deleteMascota) {
+        dispatch({
+          type: "VER_POPUP",
+          payload: "Has borrado la mascota correctamente ",
+        });
+        return alert("Has borrado tu mascota de la base de datos");
+      }
+    } catch (error) {
+      alert("no se ha cargado la bd " + error);
+    }
+  };
+
   return (
     <div className="mascotasCard">
       {mascotas.map((mascota) => {
@@ -48,27 +71,25 @@ const InfoMascotas = () => {
               <td>{mascota.doctor}</td>
             </tr>
             <div className="botonesOpciones">
+              
               <button
                 type="button"
                 className="botonOpcionesMascotas"
-                onClick=""
-              >
-                Pedir cita
-              </button>
-              <button
-                type="button"
-                className="botonOpcionesMascotas"
-                onClick=""
+                onClick={() => navegar("/modificarMascota/" + mascota.id)}
               >
                 Modificar datos de mascota
               </button>
+
               <button
                 type="button"
                 className="botonOpcionesMascotas"
-                onClick=""
+                onClick={() => borrarMascota(mascota.id)}
               >
                 Eliminar mascota
               </button>
+              <button type="button" className="botonOpcionesUsuario" onClick={() => navegar("/verCitas/" + mascota.id)}>
+              Ver citas
+            </button>
             </div>
           </div>
         );

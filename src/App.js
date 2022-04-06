@@ -5,16 +5,25 @@ import ListadoUsuario from "./contenedores/EjemploListado/ejemploListado.js";
 import CrearUsuario from "./contenedores/CrearUsuario/CrearUsuario.js";
 import LoginUsuario from "./contenedores/LoginUsuario/LoginUsuario.js";
 import Home from "./componentes/Home/Home.js";
-import RegistroMascota from "./contenedores/RegistroMascota/RegistroMascota.js"
+import RegistroMascota from "./contenedores/RegistroMascota/RegistroMascota.js";
 import VistaCliente from "./componentes/VistaCliente/VistaCliente";
 import InfoMascotas from "./contenedores/InfoMascotas/InfoMascotas";
 import CrearCita from "./contenedores/CrearCita/CrearCita.js";
+<<<<<<< HEAD
 import BorrarCita from "./contenedores/Borrarcita/Borrarcita.js";
+=======
+import Header from "./componentes/Header/Header";
+import Footer from "./componentes/Footer/Footer";
+import InfoCitas from "./contenedores/InfoCitas/InfoCitas";
+import PopUp from "./contenedores/PopUp/PopUp";
+import ModificarMascota from "./contenedores/ModificarMascota/ModificarMascota.js";
+>>>>>>> 85434594b7cc03c8f119d425deb6b53a437d1d40
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/login" element={<LoginUsuario />}></Route>
@@ -24,9 +33,19 @@ function App() {
           <Route path="/areaCliente" element={<VistaCliente />}></Route>
           <Route path="/mascotas" element={<InfoMascotas />}></Route>
           <Route path="/crearCita" element={<CrearCita />}></Route>
+<<<<<<< HEAD
           <Route path="/borrarCita" element={<BorrarCita />}></Route>
           
+=======
+          <Route path="/verCitas/:id" element={<InfoCitas />}></Route>
+          <Route
+            path="/modificarMascota/:id"
+            element={<ModificarMascota />}
+          ></Route>
+>>>>>>> 85434594b7cc03c8f119d425deb6b53a437d1d40
         </Routes>
+        <PopUp />
+        <Footer />
       </BrowserRouter>
     </div>
   );

@@ -1,37 +1,45 @@
-.loginUsuario{
-    background: url('../../../imagenes/registro_usuarioBG.jpg') no-repeat;
-    background-size: cover;
-    min-height: 100vh;
+.loginUsuario {
+  background: url("../../../imagenes/registro_usuarioBG.jpg") no-repeat;
+  background-size: cover;
+  min-height: 100vh;
 }
 
-.enlace{
-    font-size: 2em;
-    padding: 10px;
-    margin: 10px 20px;
+.enlace {
+  font-size: 2em;
+  padding: 10px;
+  margin: 10px 20px;
 }
-.enlace:hover{
-    background-color:black;
-    border: 2px solid white;
+.enlace:hover {
+  background-color: black;
+  border: 2px solid white;
 }
-.enlace a{
-    text-decoration: none;
-    color: rgb(228, 227, 227);
+.enlace a {
+  text-decoration: none;
+  color: rgb(228, 227, 227);
 }
-label{
-    font-size: 3em;
-    
+.labelUsuario {
+  font-size: 2.5em;
 }
-input{
-    font-size: 2em;
+.inputUsuario {
+  font-size: 1.5em;
 }
-form{
-    border: 2px solid #ffffff94;
-    background-color: #050506ad;
-    height: 23em;
-    width: 30em;
-    margin: 0 auto;
-    
+.formUsuario {
+  background-color: #050506ad;
+  height: 21em;
+  width: 30em;
+  margin: 0 auto;
+  padding: 1em;
+  box-shadow: 0px 0px 55px 0px white;
+  border-radius: 30px;
 }
-
-
-
+.botonUsuario {
+  display: block;
+  margin: 2em auto;
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  font-size: 2em;
+  border-radius: 8px;
+  box-shadow: 0px 0px 20px 5px white;
+}

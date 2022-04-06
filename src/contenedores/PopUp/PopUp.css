@@ -1,0 +1,8 @@
+.popup{
+    background-color: #ff000096;
+    width: 12em;
+    height: 10em;
+    position: absolute;
+    top: 13vh;
+    right: 1vh;
+}

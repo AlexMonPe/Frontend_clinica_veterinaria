@@ -2,9 +2,10 @@ import "./CrearCita.css";
 
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 
 const CrearCita = () => {
-  //const history = useNavigate();
+  const navegar = useNavigate();
   const [mascotas, setMascotas] = useState([]);
 
   //-------------------------- prueba select mascotas por id en localstorage
@@ -61,38 +62,45 @@ const CrearCita = () => {
       console.log("Form Sumbmit works", postCita);
 
       if (postCita) {
-        //history("/listado/" + postUser.userId);
+        navegar("/areaCliente");
         return alert("Has creado una cita para " + infoMascota.nombre_mascota);
       }
     } catch (error) {
       alert("no se ha cargado la bd " + error);
     }
   };
-  console.log(mascotas, "mascotaaaaaaaaaaaaaaaaas");
   return (
     <div className="crearCita">
-      <header>
-        <div className="enlace">
-          <Link to="/">Home</Link>
-        </div>
-      </header>
       <h2>Cita para mascota</h2>
-      <form onSubmit={(e) => formSubmit(e)}>
-        <label for="descripcion">Descripción de la visita</label>
-        <input type="text" id="descripcion" name="descripcion" />
-        <label for="fechaDeVisita">Fecha en la que desea la visita</label>
+      <form onSubmit={(e) => formSubmit(e)} className="formCrearCita">
+        <label className="labelCrearCita" for="descripcion">
+          Descripción de la visita
+        </label>
         <input
+          className="inputCrearCita"
+          type="text"
+          id="descripcion"
+          name="descripcion"
+        />
+        <label className="labelCrearCita" for="fechaDeVisita">
+          Fecha en la que desea la visita
+        </label>
+        <input
+          className="fecha"
           type="datetime-local"
           id="fechaDeVisita"
           name="fechaDeVisita"
           placeholder="aaaa-mm-dd hh:mm:ss"
         />
-        <select>
-          {mascotas.map((mascota) => <option value={mascota.id}>{mascota.nombre_mascota}</option>)}
+        <label className="labelCrearCita" for="seleccionar">
+          Selecciona la Mascota
+        </label>
+        <select className="selectMascotas">
+          {mascotas.map((mascota) => (
+            <option value={mascota.id}>{mascota.nombre_mascota}</option>
+          ))}
         </select>
-        <label for="idMascota">Introduzca el número de su mascota</label>
-        <input type="text" id="idMascota" name="idMascota" />
-        <input type="submit" value="SEND" className="sendButton" />
+        <input type="submit" value="Pedir cita" className="botonCrearCita" />
       </form>
     </div>
   );

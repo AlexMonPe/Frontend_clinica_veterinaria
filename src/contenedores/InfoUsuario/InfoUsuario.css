@@ -1,10 +1,23 @@
-.usuariosCard{
-    width: 20em;
-    background-color: black;
-    opacity: 0.8;
-    border: 1px solid white;
-    display: flex;
-    flex-direction: column;
-    margin: 1em;
-    box-shadow: 0px 0px 10px 7px white;
+.usuariosCard {
+  width: 20em;
+  background-color: black;
+  opacity: 0.8;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1em;
+  box-shadow: 0px 0px 10px 7px white;
+  padding: 1em;
+  border-radius: 20px;
+}
+.botonOpcionesUsuario {
+  width: 10em;
+  margin: 0.5em;
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
 }

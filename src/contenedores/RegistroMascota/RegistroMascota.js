@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "../../componentes/Footer/Footer";
 import "./RegistroMascota.css"
+=======
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import "./RegistroMascota.css";
+>>>>>>> 85434594b7cc03c8f119d425deb6b53a437d1d40
 
 const RegistroMascota = () => {
-  const history = useNavigate();
+  const dispatch = useDispatch()
+  const navegar = useNavigate();
   const formSubmit = async (e) => {
     // Make the submit dont refresh the page
     e.preventDefault();
@@ -16,18 +23,21 @@ const RegistroMascota = () => {
         idUsuario: e.target[4].value,
       };
 
-      const crearMascota = await fetch("https://veterinaria-back.herokuapp.com/mascotas", {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      console.log("Form Sumbmit works", crearMascota);
+      const crearMascota = await fetch(
+        "https://veterinaria-back.herokuapp.com/mascotas",
+        {
+          method: "POST",
+          body: JSON.stringify(formData),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       if (crearMascota) {
-        history("/listadoMascota/" + crearMascota.userId);
+        dispatch({ type: "VER_POPUP", payload: "Has creado a  "+ crearMascota.nombre_mascota });
+        setTimeout(()=>dispatch({type: "CERRAR_POPUP"}), 3000)
+        navegar("/listadoMascota/" + crearMascota.userId);
       }
     } catch (error) {
       alert("no se ha cargado la bd " + error);
