@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import actionCreator from "../../store/actionTypes";
 import "./RegistroMascota.css";
 
 const RegistroMascota = () => {
@@ -29,8 +30,8 @@ const RegistroMascota = () => {
       );
 
       if (crearMascota) {
-        dispatch({ type: "VER_POPUP", payload: "Has creado a  "+ crearMascota.nombre_mascota });
-        setTimeout(()=>dispatch({type: "CERRAR_POPUP"}), 3000)
+        dispatch(actionCreator("VER_POPUP", "Has creado a  "+ crearMascota.nombre_mascota));
+        setTimeout(()=>dispatch(actionCreator("CERRAR_POPUP")), 3000)
         navegar("/listadoMascota/" + crearMascota.userId);
       }
     } catch (error) {

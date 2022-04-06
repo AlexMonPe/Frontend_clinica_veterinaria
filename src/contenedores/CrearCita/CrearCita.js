@@ -3,8 +3,11 @@ import "./CrearCita.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import InfoMascotas from "../InfoMascotas/InfoMascotas";
+import actionCreator from "../../store/actionTypes";
 
 const CrearCita = () => {
+  const dispatch = useDispatch()
   const navegar = useNavigate();
   const [mascotas, setMascotas] = useState([]);
 
@@ -62,8 +65,9 @@ const CrearCita = () => {
       console.log("Form Sumbmit works", postCita);
 
       if (postCita) {
+        dispatch(actionCreator("VER_POPUP", "Has creado la cita para " + infoMascota.nombre_mascota));
+        setTimeout(()=>dispatch(actionCreator("CERRAR_POPUP")), 3000)
         navegar("/areaCliente");
-        return alert("Has creado una cita para " + infoMascota.nombre_mascota);
       }
     } catch (error) {
       alert("no se ha cargado la bd " + error);
