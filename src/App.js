@@ -14,6 +14,7 @@ import Footer from "./componentes/Footer/Footer";
 import InfoCitas from "./contenedores/InfoCitas/InfoCitas";
 import PopUp from "./contenedores/PopUp/PopUp";
 import ModificarMascota from "./contenedores/ModificarMascota/ModificarMascota.js";
+import ModificarUsuario from "./contenedores/ModificarUsuario/ModificarUsuario";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/login" element={<LoginUsuario />}></Route>
           <Route path="/registroMascota" element={<RegistroMascota />}></Route>
           <Route path="/registro" element={<CrearUsuario />}></Route>
+          <Route path="/modificarUsuario/:id" element={<ModificarUsuario />}></Route>
           <Route path="/listado" element={<ListadoUsuario />}></Route>
           <Route path="/areaCliente" element={<VistaCliente />}></Route>
           <Route path="/mascotas" element={<InfoMascotas />}></Route>
