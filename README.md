@@ -14,7 +14,7 @@ Para tener la dicha de usar nuestra app web tiene que seguir estos pasos:
  - Hacer click en: [Pulse aqui! 🐾](https://desarrollo.droyy9h2p31qv.amplifyapp.com/) para empezar el recorrido por **DAROCAL**
 - Aqui ya tienes las vista de **home**, que cuenta con el logo inicial y dos botones en la parte superior derecha.
 - En hacer click en botón **registrar** y  te redirigirá a una nueva vista donde te piden los siguientes datos :
-
+	````
     nombre:
     apellidos:
     email:
@@ -25,7 +25,7 @@ Para tener la dicha de usar nuestra app web tiene que seguir estos pasos:
 - Ahora estas en la **vista de cliente** donde tienes un panel con tu informacion personal , la cual puedes modificar, tambien puedes agregar tu mascota y pedir cita ya una vez tengas agregada tu mascota.
 
 - Para añadir tus mascotas debes dar click en la opción `añadir una nueva mascota` y te reenvía una vita donde debes introducir los siguientes datos:
-
+	````
 	nombre mascota:
 	peso:
 	fecha de nacimiento:
@@ -33,29 +33,11 @@ Para tener la dicha de usar nuestra app web tiene que seguir estos pasos:
 	
 - Ahora ya puedes pedir cita a tu mascota dando click en `pedir cita` y te reenvía a una vista donde tienes que introducir los siguientes datos
 	
-	Descripción de la visita:
+	````html
+	Descripción de la visita:  
 	Fecha en la que desea la visita:
 	Selecciona tu mascota:
-	
-
-
-
-    
-
- 
-
-
-
-
-
- 
- 
-
-  
-
-
-
-  
+- 
 
 **🔥Herramientas usadas y necesarias.**
 -
