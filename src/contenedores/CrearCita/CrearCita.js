@@ -79,7 +79,7 @@ const CrearCita = () => {
   };
   return (
     <div className="crearCita">
-      <h2>Cita para mascota</h2>
+      <h2 className="h2citaMascota">Cita para mascota</h2>
       <form onSubmit={(e) => formSubmit(e)} className="formCrearCita">
         <label className="labelCrearCita" htmlFor="descripcion">
           Descripción de la visita

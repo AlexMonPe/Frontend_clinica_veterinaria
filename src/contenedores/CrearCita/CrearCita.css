@@ -10,10 +10,10 @@
   background-color: #050506ad;
   height: 18em;
   width: 17em;
-  margin: 1em auto;
+  margin: 0 auto;
   box-shadow: 0px 0px 50px 10px #00096f;
   border-radius: 30px;
-  padding: 1em;
+  padding-bottom: 2em;
   font-size: 1.5em;
 }
 .botonCrearCita {
@@ -47,4 +47,11 @@ option {
   height: 2em;
   width: 15em;
   text-align: center;
+}
+
+.h2citaMascota{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3em;
+    margin: 0px;
+    padding: 1em;
 }
