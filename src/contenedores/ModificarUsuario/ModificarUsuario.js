@@ -55,8 +55,9 @@ const ModificarUsuario = () => {
         }
       );
       if (patchUsuario) {
-        navegar("/areaCliente");
+       
         dispatch(actionCreator(VER_POPUP, "Has modificado a tus datos"));
+        navegar("/areaCliente");
         setTimeout(() => dispatch(actionCreator(CERRAR_POPUP)), 3000);
       }
     } catch (error) {
