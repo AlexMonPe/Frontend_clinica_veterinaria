@@ -43,7 +43,7 @@ const CrearUsuario = () => {
 
   return (
     <div className="crearUsuario">
-      <h2>REGISTRO DE USUARIO</h2>
+      <h2 className="h2registro">REGISTRO DE USUARIO</h2>
       <form onSubmit={(e) => formSubmit(e)} className="formCrearUsuario">
         <label className="labelCrearUsuario" htmlFor="nombre">
           Nombre

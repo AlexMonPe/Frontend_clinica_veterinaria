@@ -48,7 +48,7 @@ const LoginUsuario = () => {
 
   return (
     <div className="loginUsuario">
-      <h2>LOGIN DE USUARIO</h2>
+      <h2 className="h2login">LOGIN DE USUARIO</h2>
       <form onSubmit={(e) => formSubmit(e)} className="formUsuario">
         <label className="labelUsuario" htmlFor="email">
           Email

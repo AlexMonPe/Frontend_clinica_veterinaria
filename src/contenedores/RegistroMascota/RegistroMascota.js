@@ -46,13 +46,8 @@ const RegistroMascota = () => {
   };
   return (
     <div className="crearMascota">
-      <header>
-        <div className="enlaceMascota">
-          <Link to="/">Home</Link>
-        </div>
-      </header>
-      <h1>Registro de Mascotas Cute</h1>
-      <form onSubmit={(e) => formSubmit(e)}>
+      <h1 className="h1registroMascota">Registro de Mascotas Cute</h1>
+      <form onSubmit={(e) => formSubmit(e)} className="formcrearMascota">
         <label htmlFor="nombre_mascota">nombre_mascota</label>
         <input type="text" id="nombre_mascota" name="nombre_mascota" />
         <label htmlFor="peso">peso</label>
@@ -61,7 +56,7 @@ const RegistroMascota = () => {
         <input type="text" id="fecha_nacimiento" name="fecha_nacimiento" />
         <label htmlFor="doctor">doctor</label>
         <input type="text" id="doctor" name="doctor" />
-        <input type="submit" value="SEND" className="sendButton" />
+        <input type="submit" value="SEND" className="botonCrearMascota" />
       </form>
     </div>
   );

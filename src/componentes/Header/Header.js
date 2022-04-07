@@ -21,18 +21,19 @@ const Header = () => {
   return (
     <header>
       {logged && (
-        <div className="cabecera">
+        <div>
           <div className="enlaces">
-            <button
-              type="button"
-              className="botonOpcionesMascotas"
+            <a
               onClick={() => {
                 dispatch(actionCreator(USER_LOGOUT));
                 navegar("/login");
               }}
             >
               Logout
-            </button>
+            </a>
+          </div>
+          <div className="enlaces">
+            <Link to="/areaCliente">Perfil</Link>
           </div>
           <div className="enlaces">
             <Link to="/">Home</Link>
