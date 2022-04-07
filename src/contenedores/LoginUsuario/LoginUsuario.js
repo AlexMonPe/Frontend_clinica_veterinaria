@@ -8,7 +8,7 @@ import { CERRAR_POPUP, USER_LOGGED, VER_POPUP } from "../../store/types";
 
 const LoginUsuario = () => {
   const navegar = useNavigate();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const formSubmit = async (e) => {
     // Make the submit dont refresh the page
     e.preventDefault();
@@ -35,16 +35,18 @@ const LoginUsuario = () => {
         localStorage.setItem("id", loginUser.id);
 
         dispatch(actionCreator(USER_LOGGED));
-        dispatch(actionCreator(VER_POPUP,"Te has logeado correctamente. Bienvenido"))
-        setTimeout(()=>dispatch(actionCreator(CERRAR_POPUP)), 3000)
-        navegar("/areaCliente")
+        dispatch(
+          actionCreator(VER_POPUP, "Te has logeado correctamente. Bienvenido")
+        );
+        setTimeout(() => dispatch(actionCreator(CERRAR_POPUP)), 3000);
+        navegar("/areaCliente");
       } else {
         alert("Usuario y/o contraseña incorrecto.");
       }
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   return (
     <div className="loginUsuario">
@@ -66,7 +68,7 @@ const LoginUsuario = () => {
         <input type="submit" value="Entrar" className="botonUsuario" />
       </form>
     </div>
-  )
+  );
 };
 
 export default LoginUsuario;

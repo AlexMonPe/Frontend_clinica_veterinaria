@@ -58,12 +58,14 @@ const TodasCitas = () => {
               <td>{cita.fechaDeVisita}</td>
               <th>Estado</th>
               <td>{cita.estado}</td>
+              <th>Mascota</th>
+              <td>{cita.idMascota}</td>
             </tr>
             <div className="botonesOpcionesCitas">
               <button
                 type="button"
                 className="botonCitas"
-                onClick={() => navegar("/modificarCita" + cita.id)}
+                onClick={() => navegar("/modificarCita/" + cita.id)}
               >
                 Modificar cita
               </button>
