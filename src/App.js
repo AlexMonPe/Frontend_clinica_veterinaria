@@ -16,6 +16,7 @@ import PopUp from "./contenedores/PopUp/PopUp";
 import ModificarMascota from "./contenedores/ModificarMascota/ModificarMascota.js";
 import ModificarCita from "./contenedores/ModificarCita/ModificarCita.js";
 import ModificarUsuario from "./contenedores/ModificarUsuario/ModificarUsuario";
+import TodasCitas from "./contenedores/ListadoTodasCitas/TodasCitas.js";
 
 function App() {
   return (
@@ -27,7 +28,10 @@ function App() {
           <Route path="/login" element={<LoginUsuario />}></Route>
           <Route path="/registroMascota" element={<RegistroMascota />}></Route>
           <Route path="/registro" element={<CrearUsuario />}></Route>
-          <Route path="/modificarUsuario/:id" element={<ModificarUsuario />}></Route>
+          <Route
+            path="/modificarUsuario/:id"
+            element={<ModificarUsuario />}
+          ></Route>
           <Route path="/listado" element={<ListadoUsuario />}></Route>
           <Route path="/areaCliente" element={<VistaCliente />}></Route>
           <Route path="/mascotas" element={<InfoMascotas />}></Route>
@@ -37,10 +41,8 @@ function App() {
             path="/modificarMascota/:id"
             element={<ModificarMascota />}
           ></Route>
-          <Route
-            path="/modificarCita/:id"
-            element={<ModificarCita />}
-          ></Route>
+          <Route path="/modificarCita/:id" element={<ModificarCita />}></Route>
+          <Route path="/citascompleto" element={<TodasCitas />}></Route>
         </Routes>
         <PopUp />
         <Footer />
