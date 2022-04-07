@@ -16,7 +16,7 @@ const RegistroMascota = () => {
         peso: e.target[1].value,
         fecha_nacimiento: e.target[2].value,
         doctor: e.target[3].value,
-        idUsuario: localStorage.getItem.id,
+        idUsuario: localStorage.getItem("id"),
       };
 
       const crearMascota = await fetch(
@@ -29,16 +29,16 @@ const RegistroMascota = () => {
           },
         }
       );
-
+      const mascotaCreada = await crearMascota.json();
       if (crearMascota) {
         dispatch(
           actionCreator(
             VER_POPUP,
-            "Has creado a  " + crearMascota.nombre_mascota
+            "Has creado a  " + mascotaCreada.nombre_mascota
           )
         );
         setTimeout(() => dispatch(actionCreator(CERRAR_POPUP)), 3000);
-        navegar("/listadoMascota/" + crearMascota.userId);
+        navegar("/areaCliente/");
       }
     } catch (error) {
       alert("no se ha cargado la bd " + error);
