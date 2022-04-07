@@ -1,6 +1,6 @@
 import "./InfoUsuario.css";
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const InfoUsuario = () => {
   const [usuarios, setUsuarios] = useState([]);
@@ -15,15 +15,18 @@ const InfoUsuario = () => {
     );
     const datosUsuario = await usuarioRes.json();
     setUsuarios(datosUsuario);
+    console.log(datosUsuario, 'fdgfdgdfgdfgdfgfd')
+    
   };
   useEffect(() => {
     try {
       getUsuario();
+      console.log(usuarios, 'usuario justo despues del get usuarios')
     } catch (error) {
       console.log(error);
     }
   }, []);
- 
+  console.log(usuarios, 'usuario justo despues del get usuarios')
   return (
     <div>
       {usuarios.map((usuario) => {
@@ -33,12 +36,26 @@ const InfoUsuario = () => {
             <p>Apellidos: {usuario.apellidos}</p>
             <p>Email: {usuario.email}</p>
             <p>Telefono: {usuario.telefono}</p>
-            <button type="button" className="botonOpcionesUsuario">
-              Modificar datos
-            </button>
-            <button type="button" className="botonOpcionesUsuario" onClick={() => navegar("/crearCita")}>
-              Pedir cita
-            </button>
+            <div className="botonesOpciones">
+              <button type="button" className="botonOpcionesUsuario" 
+              onClick={() => navegar("/modificarUsuario/"+ usuario.id)}>
+                Modificar datos
+              </button>
+              <button
+                type="button"
+                className="botonOpcionesUsuario"
+                onClick={() => navegar("/registroMascota")}
+              >
+                Añadir una mascota
+              </button>
+              <button
+                type="button"
+                className="botonOpcionesUsuario"
+                onClick={() => navegar("/crearCita")}
+              >
+                Pedir cita
+              </button>
+            </div>
           </div>
         );
       })}

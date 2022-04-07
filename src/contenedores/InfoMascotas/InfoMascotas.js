@@ -4,30 +4,24 @@ import CrearCita from "../CrearCita/CrearCita";
 import ModificarMascota from "../ModificarMascota/ModificarMascota.js";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import actionCreator from "../../store/actionTypes";
+import getMascotas from "../../Servicios/getMascotas";
+import { CERRAR_POPUP, VER_POPUP } from "../../store/types";
 
 const InfoMascotas = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const navegar = useNavigate();
   const [mascotas, setMascotas] = useState([]);
-
-  const getMascotas = async () => {
-    const mascotasRes = await fetch(
-      "https://veterinaria-back.herokuapp.com/mascotas?idUsuario=" +
-        localStorage.getItem("id"),
-      {
-        method: "GET",
-      }
-    );
-    const mascotasData = await mascotasRes.json();
-
-    setMascotas(mascotasData);
-  };
   useEffect(() => {
-    try {
-      getMascotas();
-    } catch (error) {
-      console.log(error);
-    }
+    const loadMascotas = async () => {
+      try {
+        const mascotas = await getMascotas();
+        setMascotas(mascotas);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    loadMascotas();
   }, []);
   console.log(mascotas, "estas son las mascotas");
   const borrarMascota = async (idmascota) => {
@@ -43,10 +37,10 @@ const InfoMascotas = () => {
       );
       getMascotas();
       if (deleteMascota) {
-        dispatch({
-          type: "VER_POPUP",
-          payload: "Has borrado la mascota correctamente ",
-        });
+        dispatch(
+          actionCreator(VER_POPUP, "Has borrado la mascota correctamente")
+        );
+        setTimeout(() => dispatch(actionCreator(CERRAR_POPUP)), 3000);
         return alert("Has borrado tu mascota de la base de datos");
       }
     } catch (error) {
@@ -71,7 +65,6 @@ const InfoMascotas = () => {
               <td>{mascota.doctor}</td>
             </tr>
             <div className="botonesOpciones">
-              
               <button
                 type="button"
                 className="botonOpcionesMascotas"
@@ -87,9 +80,13 @@ const InfoMascotas = () => {
               >
                 Eliminar mascota
               </button>
-              <button type="button" className="botonOpcionesUsuario" onClick={() => navegar("/verCitas/" + mascota.id)}>
-              Ver citas
-            </button>
+              <button
+                type="button"
+                className="botonOpcionesUsuario"
+                onClick={() => navegar("/verCitas/" + mascota.id)}
+              >
+                Ver citas
+              </button>
             </div>
           </div>
         );

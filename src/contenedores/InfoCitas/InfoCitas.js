@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import actionCreator from "../../store/actionTypes";
+import { CERRAR_POPUP, VER_POPUP } from "../../store/types";
 import "./InfoCitas.css";
 
 const InfoCitas = () => {
+  const dispatch = useDispatch()
   const [citas, setCitas] = useState([]);
   const params = useParams();
 
   const getCitas = async () => {
-    console.log(params.id, "id mascotaaaaaaa rumbaa");
     const citasRes = await fetch(
       "https://veterinaria-back.herokuapp.com/citas/lista?idMascota=" +
         params.id,
@@ -25,10 +28,8 @@ const InfoCitas = () => {
       console.log(error);
     }
   }, []);
-  console.log(citas, "estas son las citas");
   const cancelarCita = async (id) => {
     try {
-      console.log(id, ' id mascotaaaa')
       await fetch("https://veterinaria-back.herokuapp.com/citas/" + id, {
         method: "PATCH",
         body: JSON.stringify({estado: "cancelada" }),
@@ -36,8 +37,9 @@ const InfoCitas = () => {
           "Content-Type": "application/json",
         },
       });
-      console.log()
       getCitas();
+      dispatch(actionCreator(VER_POPUP, "Has cancelado la cita"));
+      setTimeout(()=>dispatch(actionCreator(CERRAR_POPUP)), 3000)
     } catch (error) {
       alert("no se ha cargado la bd " + error);
     }
