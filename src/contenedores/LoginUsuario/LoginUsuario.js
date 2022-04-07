@@ -33,13 +33,18 @@ const LoginUsuario = () => {
       if (loginUser) {
         localStorage.setItem("token", loginUser.token);
         localStorage.setItem("id", loginUser.id);
-
-        dispatch(actionCreator(USER_LOGGED));
-        dispatch(
-          actionCreator(VER_POPUP, "Te has logeado correctamente. Bienvenido")
-        );
-        setTimeout(() => dispatch(actionCreator(CERRAR_POPUP)), 3000);
-        navegar("/areaCliente");
+        localStorage.setItem("rol", loginUser.rol);
+        console.log(localStorage.getItem("rol") + "ROLLLLLL");
+        if (localStorage.getItem("rol") == "admin") {
+          navegar("/citascompleto");
+        } else {
+          dispatch(actionCreator(USER_LOGGED));
+          dispatch(
+            actionCreator(VER_POPUP, "Te has logeado correctamente. Bienvenido")
+          );
+          setTimeout(() => dispatch(actionCreator(CERRAR_POPUP)), 3000);
+          navegar("/areaCliente");
+        }
       } else {
         alert("Usuario y/o contraseña incorrecto.");
       }
