@@ -61,17 +61,22 @@ const InfoCitas = () => {
               <th>Estado</th>
               <td>{cita.estado}</td>
             </tr>
-            <div className="botonesOpciones">
+            <div className="botonesOpcionesCitas">
               <button
                 type="button"
+<<<<<<< HEAD
                 className="botonOpcionesMascotas"
                 onClick={()=> navegar ("/modificarCita/" + cita.id) }
+=======
+                className="botonCitas"
+                onClick=""
+>>>>>>> d985e4a968338fb7747524fe1a882d50284129fe
               >
                 Modificar cita
               </button>
               <button
                 type="button"
-                className="botonOpcionesMascotas"
+                className="botonCitas"
                 onClick={() => cancelarCita(cita.id)}
               >
                 Cancelar Cita
