@@ -37,8 +37,8 @@ const RegistroMascota = () => {
             "Has creado a  " + mascotaCreada.nombre_mascota
           )
         );
-        setTimeout(() => dispatch(actionCreator(CERRAR_POPUP)), 3000);
-        navegar("/areaCliente/");
+        setTimeout(() => dispatch(actionCreator(CERRAR_POPUP)), 2000);
+        setTimeout(()=>navegar("/areaCliente"), 3000);
       }
     } catch (error) {
       alert("no se ha cargado la bd " + error);

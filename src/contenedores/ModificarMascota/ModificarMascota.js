@@ -50,11 +50,9 @@ const ModificarMascota = () => {
         }
       );
       if (patchMascota) {
-        navegar("/areaCliente");
-        dispatch(
-          actionCreator(VER_POPUP, "Has modificado a " + mascota.nombre_mascota)
-        );
+        dispatch(actionCreator(VER_POPUP, "Has modificado a " + mascota.nombre_mascota));
         setTimeout(() => dispatch(actionCreator(CERRAR_POPUP)), 3000);
+        setTimeout(() => navegar("/areaCliente"), 4000);
       }
     } catch (error) {
       alert("no se ha cargado la bd " + error);

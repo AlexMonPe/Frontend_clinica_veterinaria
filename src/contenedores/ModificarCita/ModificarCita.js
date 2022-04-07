@@ -20,7 +20,6 @@ const ModificarCita = () => {
     const citaData = await citasRes.json();
 
     setCita(citaData);
-    console.log(citaData, " dataaaaaaaaa");
   };
   useEffect(() => {
     try {

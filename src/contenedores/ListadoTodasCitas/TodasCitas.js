@@ -19,7 +19,6 @@ const TodasCitas = () => {
     );
     const datosCitas = await citasRes.json();
     setCitas(datosCitas);
-    console.log(datosCitas, " Estas son todas las citas!!!!!!!!");
   };
   useEffect(() => {
     try {
@@ -44,7 +43,6 @@ const TodasCitas = () => {
       alert("no se ha cargado la bd " + error);
     }
   };
-  console.log(citas + "Estas si son todas las citas no me jodas!!!!");
   return (
     <div className="citasCardAll">
       {citas.map((cita) => {

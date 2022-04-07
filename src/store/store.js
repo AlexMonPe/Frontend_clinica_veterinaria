@@ -7,7 +7,6 @@ const initialState = {
 };
 
 const reductor = (state = initialState, action) => {
-  console.log("llega A REDUCTOR");
   if (action.type === "USER_LOGGED") {
     return {
       ...state,

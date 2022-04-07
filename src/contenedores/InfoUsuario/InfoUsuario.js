@@ -15,17 +15,15 @@ const InfoUsuario = () => {
     );
     const datosUsuario = await usuarioRes.json();
     setUsuarios(datosUsuario);
-    console.log(datosUsuario, "fdgfdgdfgdfgdfgfd");
   };
   useEffect(() => {
     try {
       getUsuario();
-      console.log(usuarios, "usuario justo despues del get usuarios");
     } catch (error) {
       console.log(error);
     }
   }, []);
-  console.log(usuarios, "usuario justo despues del get usuarios");
+
   return (
     <div>
       {usuarios.map((usuario) => {

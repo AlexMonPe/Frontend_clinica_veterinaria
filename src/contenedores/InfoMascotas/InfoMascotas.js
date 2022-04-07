@@ -23,7 +23,6 @@ const InfoMascotas = () => {
     };
     loadMascotas();
   }, []);
-  console.log(mascotas, "estas son las mascotas");
   const borrarMascota = async (idmascota) => {
     try {
       const deleteMascota = await fetch(

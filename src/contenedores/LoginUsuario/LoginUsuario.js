@@ -34,7 +34,6 @@ const LoginUsuario = () => {
         localStorage.setItem("token", loginUser.token);
         localStorage.setItem("id", loginUser.id);
         localStorage.setItem("rol", loginUser.rol);
-        console.log(localStorage.getItem("rol") + "ROLLLLLL");
         if (localStorage.getItem("rol") == "admin") {
           navegar("/citascompleto");
         } else {

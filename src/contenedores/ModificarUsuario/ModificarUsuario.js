@@ -12,9 +12,6 @@ const ModificarUsuario = () => {
   const navegar = useNavigate();
 
   const getUsuario = async () => {
-    console.log(
-      "https://veterinaria-back.herokuapp.com/" + localStorage.getItem("id")
-    );
     const usuarioRes = await fetch(
       "https://veterinaria-back.herokuapp.com/usuarios?id=" +
         localStorage.getItem("id"),
@@ -24,7 +21,7 @@ const ModificarUsuario = () => {
     );
     const datosUsuario = await usuarioRes.json();
     setUsuarios(datosUsuario[0]);
-    console.log(usuarios, "antes del get user");
+
   };
   useEffect(() => {
     try {
@@ -33,8 +30,6 @@ const ModificarUsuario = () => {
       console.log(error);
     }
   }, []);
-  console.log(usuarios, "fuera del get");
-
   const formSubmit = async (e) => {
     try {
       const formData = {
@@ -57,14 +52,13 @@ const ModificarUsuario = () => {
       if (patchUsuario) {
        
         dispatch(actionCreator(VER_POPUP, "Has modificado a tus datos"));
-        navegar("/areaCliente");
         setTimeout(() => dispatch(actionCreator(CERRAR_POPUP)), 3000);
+        setTimeout(()=>navegar("/areaCliente"), 4000);
       }
     } catch (error) {
       alert("no se ha cargado la bd " + error);
     }
   };
-  console.log(usuarios, "antes del return");
   return (
     <div className="modificarUsuario">
       <h1 className="h1ModificarUsuario">Modifica tus datos</h1>
