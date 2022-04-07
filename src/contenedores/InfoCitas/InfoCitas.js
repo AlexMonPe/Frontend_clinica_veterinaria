@@ -58,17 +58,17 @@ const InfoCitas = () => {
               <th>Estado</th>
               <td>{cita.estado}</td>
             </tr>
-            <div className="botonesOpciones">
+            <div className="botonesOpcionesCitas">
               <button
                 type="button"
-                className="botonOpcionesMascotas"
+                className="botonCitas"
                 onClick=""
               >
                 Modificar cita
               </button>
               <button
                 type="button"
-                className="botonOpcionesMascotas"
+                className="botonCitas"
                 onClick={() => cancelarCita(cita.id)}
               >
                 Cancelar Cita
