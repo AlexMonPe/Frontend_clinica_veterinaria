@@ -13,6 +13,7 @@ header {
   font-size: 25px;
   padding: 10px;
   margin: 10px 20px;
+  cursor: pointer;
 }
 .enlaces:hover {
   background-color: black;

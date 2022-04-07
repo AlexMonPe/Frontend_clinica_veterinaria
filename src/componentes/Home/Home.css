@@ -2,6 +2,7 @@
   background-image: url("../../../imagenes/fondo-home.jpg");
   background-size: cover;
   min-height: 100vh;
+  padding: 3em;
 }
 
 h1 {

@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import actionCreator from "../../store/actionTypes";
 import { CERRAR_POPUP, VER_POPUP } from "../../store/types";
 import "./RegistroMascota.css";
@@ -16,7 +16,7 @@ const RegistroMascota = () => {
         peso: e.target[1].value,
         fecha_nacimiento: e.target[2].value,
         doctor: e.target[3].value,
-        idUsuario: localStorage.getItem.id,
+        idUsuario: localStorage.getItem("id"),
       };
 
       const crearMascota = await fetch(
@@ -29,25 +29,25 @@ const RegistroMascota = () => {
           },
         }
       );
-
+      const mascotaCreada = await crearMascota.json();
       if (crearMascota) {
         dispatch(
           actionCreator(
             VER_POPUP,
-            "Has creado a  " + crearMascota.nombre_mascota
+            "Has creado a  " + mascotaCreada.nombre_mascota
           )
         );
         setTimeout(() => dispatch(actionCreator(CERRAR_POPUP)), 3000);
-        navegar("/listadoMascota/" + crearMascota.userId);
+        navegar("/areaCliente/");
       }
     } catch (error) {
       alert("no se ha cargado la bd " + error);
     }
   };
   return (
-    <div>
-      <h1>Registro de Mascotas Cute</h1>
-      <form onSubmit={(e) => formSubmit(e)}>
+    <div className="crearMascota">
+      <h1 className="h1registroMascota">Registro de Mascotas Cute</h1>
+      <form onSubmit={(e) => formSubmit(e)} className="formcrearMascota">
         <label htmlFor="nombre_mascota">nombre_mascota</label>
         <input type="text" id="nombre_mascota" name="nombre_mascota" />
         <label htmlFor="peso">peso</label>
@@ -56,7 +56,7 @@ const RegistroMascota = () => {
         <input type="text" id="fecha_nacimiento" name="fecha_nacimiento" />
         <label htmlFor="doctor">doctor</label>
         <input type="text" id="doctor" name="doctor" />
-        <input type="submit" value="SEND" className="sendButton" />
+        <input type="submit" value="SEND" className="botonCrearMascota" />
       </form>
     </div>
   );

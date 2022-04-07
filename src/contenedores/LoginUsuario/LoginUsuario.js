@@ -8,7 +8,7 @@ import { CERRAR_POPUP, USER_LOGGED, VER_POPUP } from "../../store/types";
 
 const LoginUsuario = () => {
   const navegar = useNavigate();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const formSubmit = async (e) => {
     // Make the submit dont refresh the page
     e.preventDefault();
@@ -33,22 +33,29 @@ const LoginUsuario = () => {
       if (loginUser) {
         localStorage.setItem("token", loginUser.token);
         localStorage.setItem("id", loginUser.id);
-
-        dispatch(actionCreator(USER_LOGGED));
-        dispatch(actionCreator(VER_POPUP,"Te has logeado correctamente. Bienvenido"))
-        setTimeout(()=>dispatch(actionCreator(CERRAR_POPUP)), 3000)
-        navegar("/areaCliente")
+        localStorage.setItem("rol", loginUser.rol);
+        console.log(localStorage.getItem("rol") + "ROLLLLLL");
+        if (localStorage.getItem("rol") == "admin") {
+          navegar("/citascompleto");
+        } else {
+          dispatch(actionCreator(USER_LOGGED));
+          dispatch(
+            actionCreator(VER_POPUP, "Te has logeado correctamente. Bienvenido")
+          );
+          setTimeout(() => dispatch(actionCreator(CERRAR_POPUP)), 3000);
+          navegar("/areaCliente");
+        }
       } else {
         alert("Usuario y/o contraseña incorrecto.");
       }
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   return (
     <div className="loginUsuario">
-      <h2>LOGIN DE USUARIO</h2>
+      <h2 className="h2login">LOGIN DE USUARIO</h2>
       <form onSubmit={(e) => formSubmit(e)} className="formUsuario">
         <label className="labelUsuario" htmlFor="email">
           Email
@@ -66,7 +73,7 @@ const LoginUsuario = () => {
         <input type="submit" value="Entrar" className="botonUsuario" />
       </form>
     </div>
-  )
+  );
 };
 
 export default LoginUsuario;

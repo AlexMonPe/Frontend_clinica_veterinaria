@@ -1,28 +1,25 @@
+import "./TodasCitas.css";
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
-import actionCreator from "../../store/actionTypes";
-import { CERRAR_POPUP, VER_POPUP } from "../../store/types";
-import "./InfoCitas.css";
 import { useNavigate } from "react-router-dom";
+import actionCreator from "../../store/actionTypes";
+import { useDispatch } from "react-redux";
+import { CERRAR_POPUP, VER_POPUP } from "../../store/types";
 
-
-const InfoCitas = () => {
+const TodasCitas = () => {
+  const dispatch = useDispatch();
   const navegar = useNavigate();
-  const dispatch = useDispatch()
-  const [citas, setCitas] = useState([]);
-  const params = useParams();
 
+  const [citas, setCitas] = useState([]);
   const getCitas = async () => {
     const citasRes = await fetch(
-      "https://veterinaria-back.herokuapp.com/citas/lista?idMascota=" +
-        params.id,
+      "https://veterinaria-back.herokuapp.com/citas/allcitas",
       {
         method: "GET",
       }
     );
-    const citasData = await citasRes.json();
-    setCitas(citasData);
+    const datosCitas = await citasRes.json();
+    setCitas(datosCitas);
+    console.log(datosCitas, " Estas son todas las citas!!!!!!!!");
   };
   useEffect(() => {
     try {
@@ -35,20 +32,21 @@ const InfoCitas = () => {
     try {
       await fetch("https://veterinaria-back.herokuapp.com/citas/" + id, {
         method: "PATCH",
-        body: JSON.stringify({estado: "cancelada" }),
+        body: JSON.stringify({ estado: "cancelada" }),
         headers: {
           "Content-Type": "application/json",
         },
       });
       getCitas();
       dispatch(actionCreator(VER_POPUP, "Has cancelado la cita"));
-      setTimeout(()=>dispatch(actionCreator(CERRAR_POPUP)), 3000)
+      setTimeout(() => dispatch(actionCreator(CERRAR_POPUP)), 3000);
     } catch (error) {
       alert("no se ha cargado la bd " + error);
     }
   };
+  console.log(citas + "Estas si son todas las citas no me jodas!!!!");
   return (
-    <div className="citasCard">
+    <div>
       {citas.map((cita) => {
         return (
           <div className="infoCitas">
@@ -60,12 +58,14 @@ const InfoCitas = () => {
               <td>{cita.fechaDeVisita}</td>
               <th>Estado</th>
               <td>{cita.estado}</td>
+              <th>Mascota</th>
+              <td>{cita.idMascota}</td>
             </tr>
             <div className="botonesOpcionesCitas">
               <button
                 type="button"
-                className="botonOpcionesMascotas"
-                onClick={()=> navegar ("/modificarCita/" + cita.id) }
+                className="botonCitas"
+                onClick={() => navegar("/modificarCita/" + cita.id)}
               >
                 Modificar cita
               </button>
@@ -84,4 +84,4 @@ const InfoCitas = () => {
   );
 };
 
-export default InfoCitas;
+export default TodasCitas;
