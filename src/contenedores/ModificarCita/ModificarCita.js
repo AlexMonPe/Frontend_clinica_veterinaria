@@ -53,7 +53,7 @@ const patchCita = await fetch(
         navegar("/areaCliente");
         dispatch({
           type: "VER_POPUP",
-          payload: "Has modificado a " + cita.descripcion,
+          payload: "Has modificado a " + e.target[0].value,
         });
         setTimeout(() => dispatch({ type: "CERRAR_POPUP" }), 3000);
       }
