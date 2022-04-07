@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+![enter image description here](https://i.ibb.co/S314RJ1/DARoAL.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  
 
-## Available Scripts
+🐾🐕 Bienvenido a DAROAL 🐾🐕 
+-
 
-In the project directory, you can run:
+**Proyecto Numero 6 del bootcamp de GeeksHubs 2022** en lo cual consiste en la elaboración del front de una clínica veterinaria, utilizando framework de react, redux y hacer un despliegue en AWS.
 
-### `npm start`
+Guia de uso
+-
+Para tener la dicha de usar nuestra app web tiene que seguir estos pasos: 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ - Hacer click en: [Pulse aqui! 🐾](https://desarrollo.droyy9h2p31qv.amplifyapp.com/) para empezar el recorrido por **DAROCAL**
+- Aqui ya tienes las vista de **home**, que cuenta con el logo inicial y dos botones en la parte superior derecha.
+- En hacer click en botón **registrar** y  te redirigirá a una nueva vista donde te piden los siguientes datos :
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    nombre:
+    apellidos:
+    email:
+    contraseña
+    
+-  Ya una vez registrado te reenvía la vista de **login**, donde debes introducir el email y contraseña que habías puesto en la vista de registrar 
+ 
+- Ahora estas en la **vista de cliente** donde tienes un panel con tu informacion personal , la cual puedes modificar, tambien puedes agregar tu mascota y pedir cita ya una vez tengas agregada tu mascota.
 
-### `npm test`
+- Para añadir tus mascotas debes dar click en la opción `añadir una nueva mascota` y te reenvía una vita donde debes introducir los siguientes datos:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+	nombre mascota:
+	peso:
+	fecha de nacimiento:
+	doctor:
+	
+- Ahora ya puedes pedir cita a tu mascota dando click en `pedir cita` y te reenvía a una vista donde tienes que introducir los siguientes datos
+	
+	Descripción de la visita:
+	Fecha en la que desea la visita:
+	Selecciona tu mascota:
+	
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ 
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+ 
+ 
 
-## Learn More
+  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**🔥Herramientas usadas y necesarias.**
+-
 
-### Analyzing the Bundle Size
+<code><img  height="50"  src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png"></code>  <code><img  height="50"  src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/redux/redux.png"></code>  <code><img  height="50"  src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"></code>  <code><img  height="50"  src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png"></code>  <code><img  height="50"  src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png"></code>
+<code><img  height="50"  src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/aws/aws.png"></code>  
+ 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  
 
-### Making a Progressive Web App
+✅Autores
+-
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+- Alex Montero https://github.com/AlexMonPe
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- David Sanchéz https://github.com/dvdsanar
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Rogelio Toro https://github.com/Rogeliotoro
