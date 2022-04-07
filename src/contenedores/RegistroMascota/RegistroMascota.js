@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import actionCreator from "../../store/actionTypes";
 import { CERRAR_POPUP, VER_POPUP } from "../../store/types";
 import "./RegistroMascota.css";
