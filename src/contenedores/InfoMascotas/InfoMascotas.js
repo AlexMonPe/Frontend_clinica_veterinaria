@@ -35,13 +35,13 @@ const InfoMascotas = () => {
           },
         }
       );
-      getMascotas();
+      const mascotas = await getMascotas();
+      setMascotas(mascotas);
       if (deleteMascota) {
         dispatch(
           actionCreator(VER_POPUP, "Has borrado la mascota correctamente")
         );
         setTimeout(() => dispatch(actionCreator(CERRAR_POPUP)), 3000);
-        return alert("Has borrado tu mascota de la base de datos");
       }
     } catch (error) {
       alert("no se ha cargado la bd " + error);
