@@ -4,8 +4,11 @@ import { useParams } from "react-router-dom";
 import actionCreator from "../../store/actionTypes";
 import { CERRAR_POPUP, VER_POPUP } from "../../store/types";
 import "./InfoCitas.css";
+import { useNavigate } from "react-router-dom";
+
 
 const InfoCitas = () => {
+  const navegar = useNavigate();
   const dispatch = useDispatch()
   const [citas, setCitas] = useState([]);
   const params = useParams();
@@ -61,8 +64,8 @@ const InfoCitas = () => {
             <div className="botonesOpcionesCitas">
               <button
                 type="button"
-                className="botonCitas"
-                onClick=""
+                className="botonOpcionesMascotas"
+                onClick={()=> navegar ("/modificarCita/" + cita.id) }
               >
                 Modificar cita
               </button>
