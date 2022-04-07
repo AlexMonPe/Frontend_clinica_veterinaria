@@ -16,7 +16,7 @@ const RegistroMascota = () => {
         peso: e.target[1].value,
         fecha_nacimiento: e.target[2].value,
         doctor: e.target[3].value,
-        idUsuario: localStorage.getItem("id"),
+        idUsuario: localStorage.getItem.id,
       };
 
       const crearMascota = await fetch(
@@ -29,17 +29,16 @@ const RegistroMascota = () => {
           },
         }
       );
-      const detallesMascota = await crearMascota.json();
 
       if (crearMascota) {
         dispatch(
           actionCreator(
             VER_POPUP,
-            "Has creado a  " + detallesMascota.nombre_mascota
+            "Has creado a  " + crearMascota.nombre_mascota
           )
         );
         setTimeout(() => dispatch(actionCreator(CERRAR_POPUP)), 3000);
-        navegar("/areaCliente");
+        navegar("/listadoMascota/" + crearMascota.userId);
       }
     } catch (error) {
       alert("no se ha cargado la bd " + error);
@@ -53,32 +52,16 @@ const RegistroMascota = () => {
         </div>
       </header>
       <h1>Registro de Mascotas Cute</h1>
-<<<<<<< HEAD
-      <form className="formulario" onSubmit={(e) => formSubmit(e)}>
-        <label for="nombre_mascota">nombre_mascota</label>
-=======
       <form onSubmit={(e) => formSubmit(e)}>
         <label htmlFor="nombre_mascota">nombre_mascota</label>
->>>>>>> d48d97d8a590ab3fe2f610b8e80e9eb6dc9aab89
         <input type="text" id="nombre_mascota" name="nombre_mascota" />
         <label htmlFor="peso">peso</label>
         <input type="text" id="peso" name="peso" />
-<<<<<<< HEAD
-        <label for="fecha_nacimiento">fecha_nacimiento</label>
-        <input type="datetime-local" id="fecha_nacimiento" name="fecha_nacimiento" placeholder="aaaa-mm-dd hh:mm:ss"/>
-        <label for="doctor">doctor</label>
-        <input type="text" id="doctor" name="doctor" />
-        <label for="idUsuario">idUsuario</label>
-        <input type="text" id="idUsuario" name="idUsuario" />
-        <input type="submit" value="Registrar" className="sendButton" />
-        <Footer />
-=======
         <label htmlFor="fecha_nacimiento">fecha_nacimiento</label>
         <input type="text" id="fecha_nacimiento" name="fecha_nacimiento" />
         <label htmlFor="doctor">doctor</label>
         <input type="text" id="doctor" name="doctor" />
         <input type="submit" value="SEND" className="sendButton" />
->>>>>>> d48d97d8a590ab3fe2f610b8e80e9eb6dc9aab89
       </form>
     </div>
   );
