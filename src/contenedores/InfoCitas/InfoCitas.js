@@ -64,13 +64,8 @@ const InfoCitas = () => {
             <div className="botonesOpcionesCitas">
               <button
                 type="button"
-<<<<<<< HEAD
                 className="botonOpcionesMascotas"
                 onClick={()=> navegar ("/modificarCita/" + cita.id) }
-=======
-                className="botonCitas"
-                onClick=""
->>>>>>> d985e4a968338fb7747524fe1a882d50284129fe
               >
                 Modificar cita
               </button>
