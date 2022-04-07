@@ -15,18 +15,17 @@ const InfoUsuario = () => {
     );
     const datosUsuario = await usuarioRes.json();
     setUsuarios(datosUsuario);
-    console.log(datosUsuario, 'fdgfdgdfgdfgdfgfd')
-    
+    console.log(datosUsuario, "fdgfdgdfgdfgdfgfd");
   };
   useEffect(() => {
     try {
       getUsuario();
-      console.log(usuarios, 'usuario justo despues del get usuarios')
+      console.log(usuarios, "usuario justo despues del get usuarios");
     } catch (error) {
       console.log(error);
     }
   }, []);
-  console.log(usuarios, 'usuario justo despues del get usuarios')
+  console.log(usuarios, "usuario justo despues del get usuarios");
   return (
     <div>
       {usuarios.map((usuario) => {
@@ -37,8 +36,11 @@ const InfoUsuario = () => {
             <p>Email: {usuario.email}</p>
             <p>Telefono: {usuario.telefono}</p>
             <div className="botonesOpciones">
-              <button type="button" className="botonOpcionesUsuario" 
-              onClick={() => navegar("/modificarUsuario/"+ usuario.id)}>
+              <button
+                type="button"
+                className="botonOpcionesUsuario"
+                onClick={() => navegar("/modificarUsuario/" + usuario.id)}
+              >
                 Modificar datos
               </button>
               <button

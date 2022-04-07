@@ -9,10 +9,10 @@ const ModificarCita = () => {
   const navegar = useNavigate();
   const [cita, setCita] = useState({});
 
-const getCitas = async () => {
+  const getCitas = async () => {
     const citasRes = await fetch(
       "https://veterinaria-back.herokuapp.com/citas/lista?idMascota=" +
-      params.id,
+        params.id,
       {
         method: "GET",
       }
@@ -30,7 +30,7 @@ const getCitas = async () => {
     }
   }, []);
 
-const formSubmit = async (e) => {
+  const formSubmit = async (e) => {
     // Make the submit dont refresh the page
     e.preventDefault();
     try {
@@ -39,8 +39,8 @@ const formSubmit = async (e) => {
         fechaDeVisita: e.target[1].value,
       };
 
-const patchCita = await fetch(
-  "https://veterinaria-back.herokuapp.com/citas/" + params.id,
+      const patchCita = await fetch(
+        "https://veterinaria-back.herokuapp.com/citas/" + params.id,
         {
           method: "PATCH",
           body: JSON.stringify(formData),
@@ -62,30 +62,36 @@ const patchCita = await fetch(
     }
   };
   return (
-    <div className="modificarCita" >
-      <h1>Modifica los datos de tu cita que deseas actualizar</h1>
-      <form className="formulario" onSubmit={(e) => formSubmit(e)}>
-        <label className="labelModificarCita" htmlfor="descripcion">Introduzca la descripcion </label>
+    <div className="modificarCita">
+      <h1 className="h1modificarCita">
+        Modifica los datos de tu cita que deseas actualizar
+      </h1>
+      <form className="formularioModificarCita" onSubmit={(e) => formSubmit(e)}>
+        <label className="labelModificarCita" htmlfor="descripcion">
+          Introduzca la descripcion{" "}
+        </label>
         <input
+          className="inputModificarCita"
           type="text"
           id="descripcion"
           name="descripcion"
           defaultValue={cita.descripcion}
         />
-        <label className="labelModificarCita" htmlfor="fechaDeVisita">Introduzca la fechaDeVisita </label>
-        <input 
-         className="fecha"
-         type="datetime-local"
-         id="fechaDeVisita"
-         name="fechaDeVisita"
-         placeholder="aaaa-mm-dd hh:mm:ss"
-         defaultValue={cita.fechaDeVisita}
-         />
-        <input type="submit" value="SEND" className="sendButton" />
+        <label className="labelModificarCita" htmlfor="fechaDeVisita">
+          Introduzca la fechaDeVisita{" "}
+        </label>
+        <input
+          className="inputModificarCita"
+          type="datetime-local"
+          id="fechaDeVisita"
+          name="fechaDeVisita"
+          placeholder="aaaa-mm-dd hh:mm:ss"
+          defaultValue={cita.fechaDeVisita}
+        />
+        <input type="submit" value="SEND" className="botonModificarCita" />
       </form>
     </div>
   );
 };
 
 export default ModificarCita;
-

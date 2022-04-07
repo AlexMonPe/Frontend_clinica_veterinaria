@@ -1,7 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ListadoUsuario from "./contenedores/EjemploListado/ejemploListado.js";
-
 import CrearUsuario from "./contenedores/CrearUsuario/CrearUsuario.js";
 import LoginUsuario from "./contenedores/LoginUsuario/LoginUsuario.js";
 import Home from "./componentes/Home/Home.js";

@@ -12,10 +12,12 @@ const ModificarUsuario = () => {
   const navegar = useNavigate();
 
   const getUsuario = async () => {
-    console.log("https://veterinaria-back.herokuapp.com/" + localStorage.getItem("id"));
+    console.log(
+      "https://veterinaria-back.herokuapp.com/" + localStorage.getItem("id")
+    );
     const usuarioRes = await fetch(
       "https://veterinaria-back.herokuapp.com/usuarios?id=" +
-      localStorage.getItem("id"),
+        localStorage.getItem("id"),
       {
         method: "GET",
       }
@@ -26,15 +28,13 @@ const ModificarUsuario = () => {
   };
   useEffect(() => {
     try {
-        
       getUsuario();
-      
     } catch (error) {
       console.log(error);
     }
   }, []);
   console.log(usuarios, "fuera del get");
-  
+
   const formSubmit = async (e) => {
     try {
       const formData = {

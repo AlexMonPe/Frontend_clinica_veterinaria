@@ -62,7 +62,9 @@ const ModificarMascota = () => {
   };
   return (
     <div className="modificarMascota">
-      <h1 className="h1ModificarUsuario">Modifica los datos de tu mascota que deseas actualizar</h1>
+      <h1 className="h1ModificarUsuario">
+        Modifica los datos de tu mascota que deseas actualizar
+      </h1>
       <form onSubmit={(e) => formSubmit(e)} className="formModificarMascota">
         <label htmlFor="nombre_mascota">
           Introduzca el nombre de su mascota

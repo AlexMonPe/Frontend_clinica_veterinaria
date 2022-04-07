@@ -6,10 +6,9 @@ import { CERRAR_POPUP, VER_POPUP } from "../../store/types";
 import "./InfoCitas.css";
 import { useNavigate } from "react-router-dom";
 
-
 const InfoCitas = () => {
   const navegar = useNavigate();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const [citas, setCitas] = useState([]);
   const params = useParams();
 
@@ -35,14 +34,14 @@ const InfoCitas = () => {
     try {
       await fetch("https://veterinaria-back.herokuapp.com/citas/" + id, {
         method: "PATCH",
-        body: JSON.stringify({estado: "cancelada" }),
+        body: JSON.stringify({ estado: "cancelada" }),
         headers: {
           "Content-Type": "application/json",
         },
       });
       getCitas();
       dispatch(actionCreator(VER_POPUP, "Has cancelado la cita"));
-      setTimeout(()=>dispatch(actionCreator(CERRAR_POPUP)), 3000)
+      setTimeout(() => dispatch(actionCreator(CERRAR_POPUP)), 3000);
     } catch (error) {
       alert("no se ha cargado la bd " + error);
     }
@@ -65,7 +64,7 @@ const InfoCitas = () => {
               <button
                 type="button"
                 className="botonOpcionesMascotas"
-                onClick={()=> navegar ("/modificarCita/" + cita.id) }
+                onClick={() => navegar("/modificarCita/" + cita.id)}
               >
                 Modificar cita
               </button>

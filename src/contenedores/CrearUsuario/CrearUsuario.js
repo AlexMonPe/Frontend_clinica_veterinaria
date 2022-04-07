@@ -5,7 +5,7 @@ import { CERRAR_POPUP, VER_POPUP } from "../../store/types";
 import "./CrearUsuario.css";
 
 const CrearUsuario = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const navegar = useNavigate();
   const formSubmit = async (e) => {
     // Make the submit dont refresh the page
@@ -29,11 +29,11 @@ const CrearUsuario = () => {
           },
         }
       );
-        const usuarioCreado = await postUser.json();
+      const usuarioCreado = await postUser.json();
 
       if (usuarioCreado) {
         dispatch(actionCreator(VER_POPUP, "Usuario creado. Bienvenido"));
-        setTimeout(()=>dispatch(actionCreator(CERRAR_POPUP)), 3000)
+        setTimeout(() => dispatch(actionCreator(CERRAR_POPUP)), 3000);
         navegar("/login");
       }
     } catch (error) {

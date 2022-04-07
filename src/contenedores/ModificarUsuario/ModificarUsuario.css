@@ -1,4 +1,4 @@
-.modificarUsuario{
+.modificarUsuario {
   background: url("../../../imagenes/registro_usuarioBG.jpg") no-repeat;
   background-size: cover;
   min-height: 100vh;
@@ -6,40 +6,39 @@
 }
 
 .formpatchUsuarios {
-    width: 26em;
-    background-color: black;
-    opacity: 0.8;
-    border: 1px solid white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    box-shadow: 0px 0px 10px 7px grey;
-    padding: 1em;
-    border-radius: 20px;
-  }
-.labelModificar{
-    font-size: 1.5em;
-
+  width: 26em;
+  background-color: black;
+  opacity: 0.8;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  box-shadow: 0px 0px 10px 7px grey;
+  padding: 1em;
+  border-radius: 20px;
+}
+.labelModificar {
+  font-size: 1.5em;
 }
 
 .botonModificarUsuario {
-    display: block;
-    margin: 1em auto;
-    border: 1px solid white;
-    background-color: black;
-    color: white;
-    cursor: pointer;
-    font-size: 1.5em;
-    border-radius: 8px;
-    box-shadow: 0px 0px 8px 5px white;
-  }
+  display: block;
+  margin: 1em auto;
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  font-size: 1.5em;
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px 5px white;
+}
 
-  .h1ModificarUsuario{
-      font-size: 4em;
-      padding: 1em;
-  }
-  .inputModificarUsuario{
-    text-align: center;
-      height: 2em;
-  }
+.h1ModificarUsuario {
+  font-size: 4em;
+  padding: 1em;
+}
+.inputModificarUsuario {
+  text-align: center;
+  height: 2em;
+}

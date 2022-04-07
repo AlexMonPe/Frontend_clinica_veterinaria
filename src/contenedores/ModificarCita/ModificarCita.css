@@ -1,28 +1,50 @@
-.modificarCita{
-    background-image: url("../../../imagenes/estrellas_nevado.jpg");
-    background-size: cover;
-    min-height: 100vh;
+.modificarCita {
+  background-image: url("../../../imagenes/estrellas_nevado.jpg");
+  background-size: cover;
+  min-height: 100vh;
 }
 
-.label{
-    display: block;
-    margin: 10px;
+.label {
+  display: block;
+  margin: 10px;
 }
 
-.sendButton{
-    display: block;
-    margin: 2em auto;
-    border: 1px solid white;
-    background-color: black;
-    color: white;
-    cursor: pointer;
+.botonModificarCita {
+  display: block;
+  margin: 1em auto;
+  border: 1px solid white;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  font-size: 1.5em;
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px 5px white;
 }
-.formulario {
-    height: 1em;
-    width: 80em;
+.formularioModificarCita {
+  width: 26em;
+  background-color: black;
+  opacity: 0.8;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  box-shadow: 0px 0px 10px 7px grey;
+  padding: 1em;
+  border-radius: 20px;
 }
 
-.labelModificarCita{
-    font-size: 30px;
+.labelModificarCita {
+  font-size: 2em;
+  margin: 1em;
+}
 
+.inputModificarCita {
+  width: 28em;
+  height: 3em;
+  text-align: center;
+}
+.h1modificarCita {
+  font-size: 5em;
+  padding: 1em;
 }

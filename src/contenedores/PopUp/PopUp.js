@@ -2,15 +2,15 @@ import { useDispatch, useSelector } from "react-redux";
 import "./PopUp.css";
 
 const PopUp = () => {
-    const popupState = useSelector((state) => state.popup)
+  const popupState = useSelector((state) => state.popup);
 
   return (
     <div>
-      {popupState.visibilidad && 
+      {popupState.visibilidad && (
         <div className="popup">
-            <p>{popupState.texto}</p>
+          <p>{popupState.texto}</p>
         </div>
-      }
+      )}
     </div>
   );
 };

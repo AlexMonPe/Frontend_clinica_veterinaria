@@ -46,10 +46,10 @@ const TodasCitas = () => {
   };
   console.log(citas + "Estas si son todas las citas no me jodas!!!!");
   return (
-    <div>
+    <div className="citasCardAll">
       {citas.map((cita) => {
         return (
-          <div className="infoCitas">
+          <div className="infoCitasAll">
             <h3>Datos de Citas</h3>
             <tr>
               <th>Descripción</th>
@@ -61,17 +61,17 @@ const TodasCitas = () => {
               <th>Mascota</th>
               <td>{cita.idMascota}</td>
             </tr>
-            <div className="botonesOpcionesCitas">
+            <div className="botonesOpcionesCitasAll">
               <button
                 type="button"
-                className="botonCitas"
+                className="botonCitasAll"
                 onClick={() => navegar("/modificarCita/" + cita.id)}
               >
                 Modificar cita
               </button>
               <button
                 type="button"
-                className="botonCitas"
+                className="botonCitasAll"
                 onClick={() => cancelarCita(cita.id)}
               >
                 Cancelar Cita
