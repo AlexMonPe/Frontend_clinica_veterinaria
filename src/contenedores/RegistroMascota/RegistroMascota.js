@@ -38,10 +38,14 @@ const RegistroMascota = () => {
           )
         );
         setTimeout(() => dispatch(actionCreator(CERRAR_POPUP)), 2000);
-        setTimeout(()=>navegar("/areaCliente"), 3000);
+        setTimeout(() => navegar("/areaCliente"), 3000);
       }
     } catch (error) {
-      alert("no se ha cargado la bd " + error);
+      dispatch(
+        actionCreator(VER_POPUP, "Oooops ha ocurrido algo inesperado  " + error)
+      );
+      setTimeout(() => dispatch(actionCreator(CERRAR_POPUP)), 2000);
+      //alert("no se ha cargado la bd " + error);
     }
   };
   return (
