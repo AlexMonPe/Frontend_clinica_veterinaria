@@ -21,7 +21,6 @@ const ModificarUsuario = () => {
     );
     const datosUsuario = await usuarioRes.json();
     setUsuarios(datosUsuario[0]);
-
   };
   useEffect(() => {
     try {
@@ -31,6 +30,7 @@ const ModificarUsuario = () => {
     }
   }, []);
   const formSubmit = async (e) => {
+    e.preventDefault();
     try {
       const formData = {
         nombre: e.target[0].value,
@@ -50,10 +50,9 @@ const ModificarUsuario = () => {
         }
       );
       if (patchUsuario) {
-       
         dispatch(actionCreator(VER_POPUP, "Has modificado a tus datos"));
         setTimeout(() => dispatch(actionCreator(CERRAR_POPUP)), 3000);
-        setTimeout(()=>navegar("/areaCliente"), 4000);
+        setTimeout(() => navegar("/areaCliente"), 4000);
       }
     } catch (error) {
       alert("no se ha cargado la bd " + error);
